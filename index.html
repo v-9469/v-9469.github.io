@@ -606,11 +606,11 @@ async function boot3D() {
     if (!dragging) { vel *= .94; spinOffset += vel; }
     tx += (my * .35 - tx) * .05; ty += (mx * .45 - ty) * .05;
     // random 3D drift (non-repeating via irrational frequency ratios)
-    const dt = performance.now() / 2000;
+    const driftTime = performance.now() / 2000;
     const drift = new THREE.Vector3(
-      Math.sin(dt) * 0.35,
-      Math.cos(dt * 0.7) * 0.35,
-      Math.sin(dt * 1.3) * 0.25
+      Math.sin(driftTime) * 0.35,
+      Math.cos(driftTime * 0.7) * 0.35,
+      Math.sin(driftTime * 1.3) * 0.25
     );
     group.position.set(dragPos.x + drift.x, dragPos.y + drift.y, drift.z);
     group.rotation.x = tilt + tx; group.rotation.y = t + spinOffset + ty;
