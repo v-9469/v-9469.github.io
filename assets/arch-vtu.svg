@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 728" width="980" height="728" role="img" aria-label="VTU Result Scraper: 3 min -&gt; under 60 s">
+<rect width="980" height="728" fill="#050505"/>
+<rect x="0.5" y="0.5" width="979" height="727" fill="none" stroke="#2b2b2b"/>
+<line x1="0" y1="64" x2="980" y2="64" stroke="#2b2b2b"/>
+<text x="28" y="39" font-family="'SF Mono','JetBrains Mono','Menlo','Consolas','DejaVu Sans Mono',monospace" font-size="11" letter-spacing="3" fill="#8a8a8a">FIG.04</text>
+<text x="132" y="40" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="20" font-weight="700" fill="#f4f4f4">VTU Result Scraper: 3 min -&gt; under 60 s</text>
+<text x="952" y="39" text-anchor="end" font-family="'SF Mono','JetBrains Mono','Menlo','Consolas','DejaVu Sans Mono',monospace" font-size="10" letter-spacing="3" fill="#4a4a4a">VISHAL S  /  2026</text>
+<g transform="translate(163.5 474.5)">
+<g stroke="#161616" stroke-width="1"><line x1="-103.9" y1="0.0" x2="244.2" y2="201.0"/><line x1="-64.1" y1="-23.0" x2="284.1" y2="178.0"/><line x1="-24.2" y1="-46.0" x2="323.9" y2="155.0"/><line x1="15.6" y1="-69.0" x2="363.7" y2="132.0"/><line x1="55.4" y1="-92.0" x2="403.6" y2="109.0"/><line x1="95.3" y1="-115.0" x2="443.4" y2="86.0"/><line x1="135.1" y1="-138.0" x2="483.2" y2="63.0"/><line x1="174.9" y1="-161.0" x2="523.1" y2="40.0"/><line x1="214.8" y1="-184.0" x2="562.9" y2="17.0"/><line x1="254.6" y1="-207.0" x2="602.8" y2="-6.0"/><line x1="294.4" y1="-230.0" x2="642.6" y2="-29.0"/><line x1="334.3" y1="-253.0" x2="682.4" y2="-52.0"/><line x1="374.1" y1="-276.0" x2="722.3" y2="-75.0"/><line x1="-103.9" y1="0.0" x2="408.8" y2="-296.0"/><line x1="-64.1" y1="23.0" x2="448.6" y2="-273.0"/><line x1="-24.2" y1="46.0" x2="488.4" y2="-250.0"/><line x1="15.6" y1="69.0" x2="528.3" y2="-227.0"/><line x1="55.4" y1="92.0" x2="568.1" y2="-204.0"/><line x1="95.3" y1="115.0" x2="607.9" y2="-181.0"/><line x1="135.1" y1="138.0" x2="647.8" y2="-158.0"/><line x1="174.9" y1="161.0" x2="687.6" y2="-135.0"/><line x1="214.8" y1="184.0" x2="727.5" y2="-112.0"/></g>
+<path d="M79.7,0.0 L244.2,-95.0" fill="none" stroke="#d8d8d8" stroke-width="1.3" stroke-dasharray="4 6"><animate attributeName="stroke-dashoffset" from="0" to="-20" dur="1.2s" repeatCount="indefinite"/></path>
+<path d="M244.2,-95.0 L408.8,-190.0" fill="none" stroke="#d8d8d8" stroke-width="1.3" stroke-dasharray="4 6"><animate attributeName="stroke-dashoffset" from="0" to="-20" dur="1.2s" repeatCount="indefinite"/></path>
+<path d="M408.8,-190.0 L573.3,-95.0" fill="none" stroke="#d8d8d8" stroke-width="1.3" stroke-dasharray="4 6"><animate attributeName="stroke-dashoffset" from="0" to="-20" dur="1.2s" repeatCount="indefinite"/></path>
+<path d="M573.3,-95.0 L408.8,0.0" fill="none" stroke="#d8d8d8" stroke-width="1.3" stroke-dasharray="4 6"><animate attributeName="stroke-dashoffset" from="0" to="-20" dur="1.2s" repeatCount="indefinite"/></path>
+<path d="M408.8,0.0 L244.2,95.0" fill="none" stroke="#d8d8d8" stroke-width="1.3" stroke-dasharray="4 6"><animate attributeName="stroke-dashoffset" from="0" to="-20" dur="1.2s" repeatCount="indefinite"/></path>
+<circle r="3.4" fill="#f4f4f4"><animateMotion dur="3.2s" begin="-0.0s" repeatCount="indefinite" path="M79.7,0.0 L244.2,-95.0"/></circle>
+<circle r="3.4" fill="#f4f4f4"><animateMotion dur="3.2s" begin="-0.7s" repeatCount="indefinite" path="M244.2,-95.0 L408.8,-190.0"/></circle>
+<circle r="3.4" fill="#f4f4f4"><animateMotion dur="3.2s" begin="-1.4s" repeatCount="indefinite" path="M408.8,-190.0 L573.3,-95.0"/></circle>
+<circle r="3.4" fill="#f4f4f4"><animateMotion dur="3.2s" begin="-2.1s" repeatCount="indefinite" path="M573.3,-95.0 L408.8,0.0"/></circle>
+<circle r="3.4" fill="#f4f4f4"><animateMotion dur="3.2s" begin="-2.8s" repeatCount="indefinite" path="M408.8,0.0 L244.2,95.0"/></circle>
+<polygon points="329.1,-190.0 408.8,-144.0 408.8,-214.0 329.1,-260.0" fill="#8c8c8c" stroke="#c9c9c9" stroke-width="0.9" stroke-linejoin="round"/>
+<polygon points="408.8,-144.0 488.4,-190.0 488.4,-260.0 408.8,-214.0" fill="#c2c2c2" stroke="#c9c9c9" stroke-width="0.9" stroke-linejoin="round"/>
+<polygon points="329.1,-260.0 408.8,-306.0 488.4,-260.0 408.8,-214.0" fill="#efefef" stroke="#c9c9c9" stroke-width="0.9" stroke-linejoin="round"/>
+<text transform="translate(329.1 -260.0) matrix(0.8660 -0.5 0.8660 0.5 0 0)" x="16.6" y="66.2" font-family="'SF Mono','JetBrains Mono','Menlo','Consolas','DejaVu Sans Mono',monospace" font-size="42.3" font-weight="700" fill="#050505" fill-opacity="0.9">03</text>
+<line x1="408.8" y1="-308.0" x2="408.8" y2="-315.0" stroke="#4a4a4a"/>
+<text x="408.8" y="-337.0" text-anchor="middle" font-family="'SF Mono','JetBrains Mono','Menlo','Consolas','DejaVu Sans Mono',monospace" font-size="12.5" font-weight="700" fill="#f4f4f4">Multithreaded engine</text>
+<text x="408.8" y="-321.0" text-anchor="middle" font-family="'SF Mono','JetBrains Mono','Menlo','Consolas','DejaVu Sans Mono',monospace" font-size="10" fill="#8a8a8a">Selenium, parallel fetch</text>
+<polygon points="164.5,-95.0 244.2,-49.0 244.2,-109.0 164.5,-155.0" fill="#8c8c8c" stroke="#c9c9c9" stroke-width="0.9" stroke-linejoin="round"/>
+<polygon points="244.2,-49.0 323.9,-95.0 323.9,-155.0 244.2,-109.0" fill="#c2c2c2" stroke="#c9c9c9" stroke-width="0.9" stroke-linejoin="round"/>
+<polygon points="164.5,-155.0 244.2,-201.0 323.9,-155.0 244.2,-109.0" fill="#efefef" stroke="#c9c9c9" stroke-width="0.9" stroke-linejoin="round"/>
+<text transform="translate(164.5 -155.0) matrix(0.8660 -0.5 0.8660 0.5 0 0)" x="16.6" y="66.2" font-family="'SF Mono','JetBrains Mono','Menlo','Consolas','DejaVu Sans Mono',monospace" font-size="42.3" font-weight="700" fill="#050505" fill-opacity="0.9">02</text>
+<line x1="244.2" y1="-203.0" x2="244.2" y2="-210.0" stroke="#4a4a4a"/>
+<text x="244.2" y="-232.0" text-anchor="middle" font-family="'SF Mono','JetBrains Mono','Menlo','Consolas','DejaVu Sans Mono',monospace" font-size="12.5" font-weight="700" fill="#f4f4f4">OpenCV + Tesseract</text>
+<text x="244.2" y="-216.0" text-anchor="middle" font-family="'SF Mono','JetBrains Mono','Menlo','Consolas','DejaVu Sans Mono',monospace" font-size="10" fill="#8a8a8a">CAPTCHA solve + auto-retry</text>
+<polygon points="493.6,-95.0 573.3,-49.0 573.3,-95.0 493.6,-141.0" fill="#0b0b0b" stroke="#c9c9c9" stroke-width="0.9" stroke-linejoin="round"/>
+<polygon points="573.3,-49.0 653.0,-95.0 653.0,-141.0 573.3,-95.0" fill="#272727" stroke="#c9c9c9" stroke-width="0.9" stroke-linejoin="round"/>
+<polygon points="493.6,-141.0 573.3,-187.0 653.0,-141.0 573.3,-95.0" fill="#1b1b1b" stroke="#c9c9c9" stroke-width="0.9" stroke-linejoin="round"/>
+<text transform="translate(493.6 -141.0) matrix(0.8660 -0.5 0.8660 0.5 0 0)" x="16.6" y="66.2" font-family="'SF Mono','JetBrains Mono','Menlo','Consolas','DejaVu Sans Mono',monospace" font-size="42.3" font-weight="700" fill="#f4f4f4" fill-opacity="0.9">04</text>
+<line x1="573.3" y1="-189.0" x2="573.3" y2="-196.0" stroke="#4a4a4a"/>
+<text x="573.3" y="-218.0" text-anchor="middle" font-family="'SF Mono','JetBrains Mono','Menlo','Consolas','DejaVu Sans Mono',monospace" font-size="12.5" font-weight="700" fill="#f4f4f4">SQLite</text>
+<text x="573.3" y="-202.0" text-anchor="middle" font-family="'SF Mono','JetBrains Mono','Menlo','Consolas','DejaVu Sans Mono',monospace" font-size="10" fill="#8a8a8a">structured results</text>
+<polygon points="0.0,0.0 79.7,46.0 79.7,12.0 0.0,-34.0" fill="#0b0b0b" stroke="#c9c9c9" stroke-width="0.9" stroke-linejoin="round"/>
+<polygon points="79.7,46.0 159.3,0.0 159.3,-34.0 79.7,12.0" fill="#272727" stroke="#c9c9c9" stroke-width="0.9" stroke-linejoin="round"/>
+<polygon points="0.0,-34.0 79.7,-80.0 159.3,-34.0 79.7,12.0" fill="#1b1b1b" stroke="#c9c9c9" stroke-width="0.9" stroke-linejoin="round"/>
+<text transform="translate(0.0 -34.0) matrix(0.8660 -0.5 0.8660 0.5 0 0)" x="16.6" y="66.2" font-family="'SF Mono','JetBrains Mono','Menlo','Consolas','DejaVu Sans Mono',monospace" font-size="42.3" font-weight="700" fill="#f4f4f4" fill-opacity="0.9">01</text>
+<line x1="79.7" y1="-82.0" x2="79.7" y2="-89.0" stroke="#4a4a4a"/>
+<text x="79.7" y="-111.0" text-anchor="middle" font-family="'SF Mono','JetBrains Mono','Menlo','Consolas','DejaVu Sans Mono',monospace" font-size="12.5" font-weight="700" fill="#f4f4f4">Results portal</text>
+<text x="79.7" y="-95.0" text-anchor="middle" font-family="'SF Mono','JetBrains Mono','Menlo','Consolas','DejaVu Sans Mono',monospace" font-size="10" fill="#8a8a8a">VTU</text>
+<polygon points="329.1,0.0 408.8,46.0 408.8,6.0 329.1,-40.0" fill="#0b0b0b" stroke="#c9c9c9" stroke-width="0.9" stroke-linejoin="round"/>
+<polygon points="408.8,46.0 488.4,0.0 488.4,-40.0 408.8,6.0" fill="#272727" stroke="#c9c9c9" stroke-width="0.9" stroke-linejoin="round"/>
+<polygon points="329.1,-40.0 408.8,-86.0 488.4,-40.0 408.8,6.0" fill="#1b1b1b" stroke="#c9c9c9" stroke-width="0.9" stroke-linejoin="round"/>
+<text transform="translate(329.1 -40.0) matrix(0.8660 -0.5 0.8660 0.5 0 0)" x="16.6" y="66.2" font-family="'SF Mono','JetBrains Mono','Menlo','Consolas','DejaVu Sans Mono',monospace" font-size="42.3" font-weight="700" fill="#f4f4f4" fill-opacity="0.9">05</text>
+<line x1="408.8" y1="-88.0" x2="408.8" y2="-95.0" stroke="#4a4a4a"/>
+<text x="408.8" y="-117.0" text-anchor="middle" font-family="'SF Mono','JetBrains Mono','Menlo','Consolas','DejaVu Sans Mono',monospace" font-size="12.5" font-weight="700" fill="#f4f4f4">Chart.js</text>
+<text x="408.8" y="-101.0" text-anchor="middle" font-family="'SF Mono','JetBrains Mono','Menlo','Consolas','DejaVu Sans Mono',monospace" font-size="10" fill="#8a8a8a">batch insight dashboards</text>
+<polygon points="164.5,95.0 244.2,141.0 244.2,105.0 164.5,59.0" fill="#0b0b0b" stroke="#c9c9c9" stroke-width="0.9" stroke-linejoin="round"/>
+<polygon points="244.2,141.0 323.9,95.0 323.9,59.0 244.2,105.0" fill="#272727" stroke="#c9c9c9" stroke-width="0.9" stroke-linejoin="round"/>
+<polygon points="164.5,59.0 244.2,13.0 323.9,59.0 244.2,105.0" fill="#1b1b1b" stroke="#c9c9c9" stroke-width="0.9" stroke-linejoin="round"/>
+<text transform="translate(164.5 59.0) matrix(0.8660 -0.5 0.8660 0.5 0 0)" x="16.6" y="66.2" font-family="'SF Mono','JetBrains Mono','Menlo','Consolas','DejaVu Sans Mono',monospace" font-size="42.3" font-weight="700" fill="#f4f4f4" fill-opacity="0.9">06</text>
+<line x1="244.2" y1="11.0" x2="244.2" y2="4.0" stroke="#4a4a4a"/>
+<text x="244.2" y="-18.0" text-anchor="middle" font-family="'SF Mono','JetBrains Mono','Menlo','Consolas','DejaVu Sans Mono',monospace" font-size="12.5" font-weight="700" fill="#f4f4f4">Flask app</text>
+<text x="244.2" y="-2.0" text-anchor="middle" font-family="'SF Mono','JetBrains Mono','Menlo','Consolas','DejaVu Sans Mono',monospace" font-size="10" fill="#8a8a8a">Python</text>
+</g>
+<line x1="0" y1="672" x2="980" y2="672" stroke="#2b2b2b"/>
+<text x="28" y="694" font-family="'SF Mono','JetBrains Mono','Menlo','Consolas','DejaVu Sans Mono',monospace" font-size="10.5" fill="#8a8a8a">Aug 2024 - Dec 2024.  Automated CAPTCHA recognition with retry logic, parallelised fetches,</text>
+<text x="28" y="710" font-family="'SF Mono','JetBrains Mono','Menlo','Consolas','DejaVu Sans Mono',monospace" font-size="10.5" fill="#8a8a8a">results stored in SQLite and turned into batch insights on Chart.js dashboards.</text>
+</svg>
