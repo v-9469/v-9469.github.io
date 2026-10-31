@@ -7,7 +7,7 @@
 [![GitHub](https://img.shields.io/badge/GitHub-v--9469-000000?style=for-the-badge&logo=github&logoColor=white&labelColor=000000)](https://github.com/v-9469)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-s--vishal--reddy-000000?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=000000)](https://www.linkedin.com/in/s-vishal-reddy)
 [![Email](https://img.shields.io/badge/Email-svishalreddy2005-000000?style=for-the-badge&logo=gmail&logoColor=white&labelColor=000000)](mailto:svishalreddy2005@gmail.com)
-[![Portfolio](https://img.shields.io/badge/Live_page-v--9469.github.io-ffffff?style=for-the-badge&labelColor=000000&color=ffffff&logoColor=black)](https://v-9469.github.io/v-9469/)
+[![Portfolio](https://img.shields.io/badge/Live_page-v--9469.github.io-ffffff?style=for-the-badge&labelColor=000000&color=ffffff&logoColor=black)](https://v-9469.github.io/)
 
 **[Experience](#experience) · [Selected work](#selected-work) · [The stack](#the-stack) · [Timeline](#timeline) · [Record](#record) · [Contact](#contact)**
 
@@ -28,7 +28,7 @@ I'm **Vishal S**, a Computer Science (Data Science) undergraduate in **Bengaluru
 | **Strongest at** | REST APIs, containerized deployments, test suites that run in the pipeline |
 | **Based in** | Bengaluru, Karnataka, India |
 
-> The same visual language lives on the [live intro page](https://v-9469.github.io/v-9469/): a drag-to-rotate Three.js torus, tilting project cards and a CSS-3D exploded stack.
+> The same visual language lives on the [live intro page](https://v-9469.github.io/): a drag-to-rotate Three.js torus, tilting project cards and a CSS-3D exploded stack.
 
 ---
 
@@ -181,7 +181,7 @@ timeline
 | Email | [svishalreddy2005@gmail.com](mailto:svishalreddy2005@gmail.com) |
 | GitHub | [github.com/v-9469](https://github.com/v-9469) |
 | LinkedIn | [linkedin.com/in/s-vishal-reddy](https://www.linkedin.com/in/s-vishal-reddy) |
-| Live page | [v-9469.github.io/v-9469](https://v-9469.github.io/v-9469/) |
+| Live page | [v-9469.github.io](https://v-9469.github.io/) |
 
 ---
 
@@ -206,7 +206,7 @@ timeline
     └── gen_assets.py         regenerates every SVG in assets/ (Python 3, no dependencies)
 ```
 
-**Why SVG and not WebGL in the README?** GitHub strips JavaScript, so the 3D here is pre-computed. The torus is projected in Python for 19 rotation keyframes and animated with SMIL `<animate attributeName="d">`; the isometric scenes use a hand-written projection (`x → ↗`, `y → ↘`, `z → ↑`) and painter's-algorithm ordering. The [live page](https://v-9469.github.io/v-9469/) uses real Three.js.
+**Why SVG and not WebGL in the README?** GitHub strips JavaScript, so the 3D here is pre-computed. The torus is projected in Python for 19 rotation keyframes and animated with SMIL `<animate attributeName="d">`; the isometric scenes use a hand-written projection (`x → ↗`, `y → ↘`, `z → ↑`) and painter's-algorithm ordering. The [live page](https://v-9469.github.io/) uses real Three.js.
 
 **Regenerate the art**
 
@@ -217,6 +217,8 @@ python3 scripts/gen_assets.py
 **Publish the page**: Settings → Pages → *Deploy from a branch* → `main` / root. The page loads Three.js from a CDN and falls back to a 2D canvas renderer if WebGL is unavailable.
 
 **Palette**: `#050505` background · `#f4f4f4` ink · `#8a8a8a` muted · `#2b2b2b` hairlines · one steel-blue accent (`#8fa8bf`), used only for links.
+
+**Zero build, no lockfiles**: `package.json`, `package-lock.json`, `pnpm-lock.yaml`, `bun.lock` and `yarn.lock` are intentionally gitignored. The portfolio is a single dependency-free HTML file plus a Python SVG generator — nothing to install, nothing to bundle, nothing to rot.
 
 </details>
 

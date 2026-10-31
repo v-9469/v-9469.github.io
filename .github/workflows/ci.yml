@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Regenerate SVG assets
+        run: python scripts/gen_assets.py
+
+      - name: Verify assets are idempotent (no unexpected changes)
+        run: |
+          git diff --exit-code -- assets/ scripts/ || {
+            echo "ERROR: Running gen_assets.py changed tracked files. Commit regenerated assets or fix the generator."
+            exit 1
+          }
+
+      - name: Check HTML for broken anchors
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          html = Path("index.html").read_text()
+          ids = set(re.findall(r'id="([^"]+)"', html))
+          refs = set(re.findall(r'href="#([^"]+)"', html))
+          broken = refs - ids
+          if broken:
+            print("BROKEN ANCHORS:", sorted(broken))
+            raise SystemExit(1)
+          print("All internal anchors resolve.")
+          PY
