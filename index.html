@@ -514,12 +514,17 @@ if (!reduce && matchMedia('(hover:hover)').matches) {
 /* ---------- hero torus ---------- */
 const canvas = $('#torus'), stage = $('#stage'), engineLabel = $('#engine');
 const R = 1, r = .4, RINGS = 28, PTS = 120, MERI = 36;
-let spinOffset = 0, dragging = false, lastX = 0, vel = 0, mx = 0, my = 0, visible = true;
+let spinOffset = 0, dragging = false, lastX = 0, lastY = 0, vel = 0, mx = 0, my = 0, visible = true;
+let dragPos = { x: 0, y: 0, z: 0 };
 new IntersectionObserver(([e]) => visible = e.isIntersecting).observe(stage);
 canvas.addEventListener('pointerdown', e => { dragging = true; lastX = e.clientX; canvas.setPointerCapture(e.pointerId); });
 canvas.addEventListener('pointermove', e => {
   const b = canvas.getBoundingClientRect(); mx = (e.clientX - b.left) / b.width - .5; my = (e.clientY - b.top) / b.height - .5;
-  if (dragging) { vel = (e.clientX - lastX) * .008; spinOffset += vel; lastX = e.clientX; }
+  if (dragging) {
+    dragPos.x += (e.clientX - lastX) * 0.015;
+    dragPos.y -= (e.clientY - lastY) * 0.015;
+    lastX = e.clientX; lastY = e.clientY;
+  }
 });
 ['pointerup', 'pointercancel'].forEach(t => canvas.addEventListener(t, () => dragging = false));
 canvas.addEventListener('keydown', e => {
@@ -580,6 +585,12 @@ async function boot3D() {
   const cube2 = new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(.16, .16, .16)), new THREE.LineBasicMaterial({ color: 0xffffff }));
   orbit2.add(cube2);
 
+  // 3D axis gizmo: X=red, Y=green, Z=blue from origin
+  const axisLen = 3;
+  scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0,0,0), new THREE.Vector3(axisLen,0,0)]), new THREE.LineBasicMaterial({ color: 0xff4444 })));
+  scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0,0,0), new THREE.Vector3(0,axisLen,0)]), new THREE.LineBasicMaterial({ color: 0x44ff44 })));
+  scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0,0,0), new THREE.Vector3(0,0,axisLen)]), new THREE.LineBasicMaterial({ color: 0x4444ff })));
+
   function resize() {
     const w = stage.clientWidth, h = stage.clientHeight; renderer.setSize(w, h, false);
     camera.aspect = w / h; camera.fov = w / h < 1 ? 46 : 34; camera.updateProjectionMatrix();
@@ -594,6 +605,14 @@ async function boot3D() {
     if (!reduce) t += dt * .22;
     if (!dragging) { vel *= .94; spinOffset += vel; }
     tx += (my * .35 - tx) * .05; ty += (mx * .45 - ty) * .05;
+    // random 3D drift (non-repeating via irrational frequency ratios)
+    const dt = performance.now() / 2000;
+    const drift = new THREE.Vector3(
+      Math.sin(dt) * 0.35,
+      Math.cos(dt * 0.7) * 0.35,
+      Math.sin(dt * 1.3) * 0.25
+    );
+    group.position.set(dragPos.x + drift.x, dragPos.y + drift.y, drift.z);
     group.rotation.x = tilt + tx; group.rotation.y = t + spinOffset + ty;
     const a = performance.now() / 1800; cube.position.set(1.85 * Math.cos(a), 1.85 * Math.sin(a), 0); cube.rotation.set(a, a * .7, 0);
     const a2 = performance.now() / 1800 + Math.PI / 2; cube2.position.set(1.85 * Math.cos(a2), 0, 1.85 * Math.sin(a2)); cube2.rotation.set(a2, a2 * .7, 0);
