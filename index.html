@@ -555,23 +555,30 @@ async function boot3D() {
     const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.BufferAttribute(p, 3));
     group.add(new THREE.LineLoop(g, new THREE.LineBasicMaterial({ color: 0xffffff, transparent: true, opacity: .13 })));
   }
-  // orbit ring + a small cube travelling on it
+  // orbit rings — clean orthogonal axes around the torus
+  const orbitMat = new THREE.LineDashedMaterial({ color: 0x666666, transparent: true, opacity: .4, dashSize: .04, gapSize: .16 });
+
+  // Ring 1: XY plane, tilted back around X axis (clean equator)
   const orbit = new THREE.Group(); scene.add(orbit);
   const op = new Float32Array(160 * 3); for (let j = 0; j < 160; j++) { const a = 2 * Math.PI * j / 160; op.set([1.85 * Math.cos(a), 1.85 * Math.sin(a), 0], j * 3); }
   const og = new THREE.BufferGeometry(); og.setAttribute('position', new THREE.BufferAttribute(op, 3));
-  orbit.add(new THREE.LineLoop(og, new THREE.LineDashedMaterial({ color: 0x777777, dashSize: .06, gapSize: .08 })));
+  orbit.add(new THREE.LineLoop(og, orbitMat));
   orbit.children[0].computeLineDistances();
-  const cube = new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(.16, .16, .16)), new THREE.LineBasicMaterial({ color: 0xffffff }));
-  orbit.add(cube); orbit.rotation.set(1.05, .2, .35);
+  orbit.rotation.set(-0.5, 0, 0);
 
-  // second orbit ring, orthogonal to the first
+  const cube = new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(.16, .16, .16)), new THREE.LineBasicMaterial({ color: 0xffffff }));
+  orbit.add(cube);
+
+  // Ring 2: XZ plane, standing vertical around Y axis — orthogonal to ring 1 (clean meridian)
   const orbit2 = new THREE.Group(); scene.add(orbit2);
   const op2 = new Float32Array(160 * 3); for (let j = 0; j < 160; j++) { const a = 2 * Math.PI * j / 160; op2.set([1.85 * Math.cos(a), 0, 1.85 * Math.sin(a)], j * 3); }
   const og2 = new THREE.BufferGeometry(); og2.setAttribute('position', new THREE.BufferAttribute(op2, 3));
-  orbit2.add(new THREE.LineLoop(og2, new THREE.LineDashedMaterial({ color: 0x777777, dashSize: .06, gapSize: .08 })));
+  orbit2.add(new THREE.LineLoop(og2, orbitMat));
   orbit2.children[0].computeLineDistances();
+  orbit2.rotation.set(0, Math.PI / 2, 0);
+
   const cube2 = new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(.16, .16, .16)), new THREE.LineBasicMaterial({ color: 0xffffff }));
-  orbit2.add(cube2); orbit2.rotation.set(.6, 1.05, .35);
+  orbit2.add(cube2);
 
   function resize() {
     const w = stage.clientWidth, h = stage.clientHeight; renderer.setSize(w, h, false);
