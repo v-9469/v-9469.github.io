@@ -561,7 +561,7 @@ async function boot3D() {
     group.add(new THREE.LineLoop(g, new THREE.LineBasicMaterial({ color: 0xffffff, transparent: true, opacity: .13 })));
   }
   // orbit rings — clean orthogonal axes around the torus
-  const orbitMat = new THREE.LineDashedMaterial({ color: 0x666666, transparent: true, opacity: .4, dashSize: .04, gapSize: .16 });
+  const orbitMat = new THREE.LineDashedMaterial({ color: 0xaaaaaa, transparent: true, opacity: .8, dashSize: .06, gapSize: .10 });
 
   // Ring 1: XY plane, tilted back around X axis (clean equator)
   const orbit = new THREE.Group(); scene.add(orbit);
