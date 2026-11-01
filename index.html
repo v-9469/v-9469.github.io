@@ -517,7 +517,7 @@ const R = 1, r = .4, RINGS = 28, PTS = 120, MERI = 36;
 let spinOffset = 0, dragging = false, lastX = 0, lastY = 0, vel = 0, mx = 0, my = 0, visible = true;
 let dragPos = { x: 0, y: 0, z: 0 };
 new IntersectionObserver(([e]) => visible = e.isIntersecting).observe(stage);
-canvas.addEventListener('pointerdown', e => { dragging = true; lastX = e.clientX; canvas.setPointerCapture(e.pointerId); });
+canvas.addEventListener('pointerdown', e => { dragging = true; lastX = e.clientX; lastY = e.clientY; canvas.setPointerCapture(e.pointerId); });
 canvas.addEventListener('pointermove', e => {
   const b = canvas.getBoundingClientRect(); mx = (e.clientX - b.left) / b.width - .5; my = (e.clientY - b.top) / b.height - .5;
   if (dragging) {
@@ -584,12 +584,6 @@ async function boot3D() {
 
   const cube2 = new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(.16, .16, .16)), new THREE.LineBasicMaterial({ color: 0xffffff }));
   orbit2.add(cube2);
-
-  // 3D axis gizmo: X=red, Y=green, Z=blue from origin
-  const axisLen = 3;
-  scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0,0,0), new THREE.Vector3(axisLen,0,0)]), new THREE.LineBasicMaterial({ color: 0xff4444 })));
-  scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0,0,0), new THREE.Vector3(0,axisLen,0)]), new THREE.LineBasicMaterial({ color: 0x44ff44 })));
-  scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0,0,0), new THREE.Vector3(0,0,axisLen)]), new THREE.LineBasicMaterial({ color: 0x4444ff })));
 
   function resize() {
     const w = stage.clientWidth, h = stage.clientHeight; renderer.setSize(w, h, false);
