@@ -560,10 +560,9 @@ async function boot3D() {
     const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.BufferAttribute(p, 3));
     group.add(new THREE.LineLoop(g, new THREE.LineBasicMaterial({ color: 0xffffff, transparent: true, opacity: .13 })));
   }
-  // orbit rings — clean orthogonal axes around the torus
+  // single orbit ring around the torus with travelling cube
   const orbitMat = new THREE.LineDashedMaterial({ color: 0xaaaaaa, transparent: true, opacity: .8, dashSize: .06, gapSize: .10 });
 
-  // Ring 1: XY plane, tilted back around X axis (clean equator)
   const orbit = new THREE.Group(); scene.add(orbit);
   const op = new Float32Array(160 * 3); for (let j = 0; j < 160; j++) { const a = 2 * Math.PI * j / 160; op.set([1.85 * Math.cos(a), 1.85 * Math.sin(a), 0], j * 3); }
   const og = new THREE.BufferGeometry(); og.setAttribute('position', new THREE.BufferAttribute(op, 3));
@@ -573,17 +572,6 @@ async function boot3D() {
 
   const cube = new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(.16, .16, .16)), new THREE.LineBasicMaterial({ color: 0xffffff }));
   orbit.add(cube);
-
-  // Ring 2: XZ plane, standing vertical around Y axis — orthogonal to ring 1 (clean meridian)
-  const orbit2 = new THREE.Group(); scene.add(orbit2);
-  const op2 = new Float32Array(160 * 3); for (let j = 0; j < 160; j++) { const a = 2 * Math.PI * j / 160; op2.set([1.85 * Math.cos(a), 0, 1.85 * Math.sin(a)], j * 3); }
-  const og2 = new THREE.BufferGeometry(); og2.setAttribute('position', new THREE.BufferAttribute(op2, 3));
-  orbit2.add(new THREE.LineLoop(og2, orbitMat));
-  orbit2.children[0].computeLineDistances();
-  orbit2.rotation.set(0, Math.PI / 2, 0);
-
-  const cube2 = new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(.16, .16, .16)), new THREE.LineBasicMaterial({ color: 0xffffff }));
-  orbit2.add(cube2);
 
   function resize() {
     const w = stage.clientWidth, h = stage.clientHeight; renderer.setSize(w, h, false);
@@ -609,7 +597,6 @@ async function boot3D() {
     group.position.set(dragPos.x + drift.x, dragPos.y + drift.y, drift.z);
     group.rotation.x = tilt + tx; group.rotation.y = t + spinOffset + ty;
     const a = performance.now() / 1800; cube.position.set(1.85 * Math.cos(a), 1.85 * Math.sin(a), 0); cube.rotation.set(a, a * .7, 0);
-    const a2 = performance.now() / 1800 + Math.PI / 2; cube2.position.set(1.85 * Math.cos(a2), 0, 1.85 * Math.sin(a2)); cube2.rotation.set(a2, a2 * .7, 0);
     renderer.render(scene, camera);
   }
   requestAnimationFrame(frame);
