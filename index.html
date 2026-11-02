@@ -1,633 +1,1675 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Vishal S | Backend &amp; Cloud Engineer</title>
-<meta name="description" content="Vishal S, Computer Science (Data Science) undergraduate in Bengaluru. Backend services in Java/Spring Boot and Python/FastAPI, tested and shipped on AWS with CI/CD.">
-<meta name="theme-color" content="#050505">
-<meta property="og:title" content="Vishal S | Backend &amp; Cloud Engineer">
-<meta property="og:description" content="Spring Boot, FastAPI, AWS, Docker, CI/CD, tests.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://v-9469.github.io/">
-<meta property="og:image" content="https://v-9469.github.io/assets/hero.svg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Vishal S | Backend & Cloud Engineer">
-<meta name="twitter:description" content="Backend services in Java/Spring Boot and Python/FastAPI, shipped to AWS through CI/CD.">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vishal S | Backend &amp; Cloud Engineer</title>
+    <meta
+      name="description"
+      content="Vishal S, Computer Science (Data Science) undergraduate in Bengaluru. Backend services in Java/Spring Boot and Python/FastAPI, tested and shipped on AWS with CI/CD."
+    />
+    <meta name="theme-color" content="#050505" />
+    <meta
+      property="og:title"
+      content="Vishal S | Backend &amp; Cloud Engineer"
+    />
+    <meta
+      property="og:description"
+      content="Spring Boot, FastAPI, AWS, Docker, CI/CD, tests."
+    />
+    <meta property="og:type" content="website" />
 
-<script type="importmap">
-{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.module.js" } }
-</script>
-<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.module.js" integrity="sha384-T/E3B9AvPtLn5PKD7aTSFqizQcA4kHDfU0lub7u0fvM4w9BMGcSb3yI7r5LqMAMn" crossorigin="anonymous">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Vishal S",
-  "url": "https://v-9469.github.io/",
-  "image": "https://v-9469.github.io/assets/hero.svg",
-  "jobTitle": "Backend & Cloud Engineer",
-  "worksFor": {"@type": "Organization", "name": "UNext Learning"},
-  "alumniOf": {"@type": "CollegeOrUniversity", "name": "Bangalore Institute of Technology"},
-  "knowsAbout": ["Java", "Spring Boot", "Python", "FastAPI", "AWS", "Docker", "CI/CD", "PostgreSQL", "MongoDB", "Redis"],
-  "sameAs": [
-    "https://github.com/v-9469",
-    "https://www.linkedin.com/in/s-vishal-reddy"
-  ],
-  "email": "svishalreddy2005@gmail.com",
-  "address": {"@type": "PostalAddress", "addressLocality": "Bengaluru", "addressCountry": "IN"}
-}
-</script>
-
-<style>
-:root{
-  --bg:#050505; --panel:#0a0a0a; --ink:#f4f4f4; --mute:#8a8a8a; --dim:#4a4a4a; --hair:#2b2b2b;
-  --accent:#8fa8bf;               /* the one subtle steel-blue accent, links only */
-  --mono: ui-monospace,"SF Mono","JetBrains Mono",Menlo,Consolas,"DejaVu Sans Mono",monospace;
-  --sans: "Helvetica Neue",Helvetica,Arial,system-ui,sans-serif;
-  --rail: 56px;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;background:var(--bg)}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.5;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}
-::selection{background:var(--ink);color:var(--bg)}
-/* focus visible */
-a:focus-visible,.btn:focus-visible,canvas:focus-visible{
-  outline:2px solid var(--accent);
-  outline-offset:2px;
-}
-.mono{font-family:var(--mono)}
-.tiny{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--mute)}
-
-/* ---------- rails ---------- */
-.rail{position:fixed;left:0;top:0;bottom:0;width:var(--rail);border-right:1px solid var(--hair);background:var(--bg);z-index:20;
-  display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:18px 0}
-.rail ol{list-style:none;display:flex;flex-direction:column;gap:14px}
-.rail a{font-family:var(--mono);font-size:10px;color:var(--dim);transition:color .2s}
-.rail a:hover,.rail a.on{color:var(--ink)}
-.rail .vt{writing-mode:vertical-rl;transform:rotate(180deg);font-family:var(--mono);font-size:9px;letter-spacing:.3em;color:var(--dim);text-transform:uppercase;white-space:nowrap}
-main{margin-left:var(--rail)}
-.skip-link{
-  position:absolute;
-  left:-9999px;
-  top:auto;
-  width:1px;
-  height:1px;
-  overflow:hidden;
-  z-index:-1
-}
-.skip-link:focus{
-  position:absolute;
-  left:var(--rail);
-  top:0;
-  width:auto;
-  height:auto;
-  padding:8px 16px;
-  background:var(--bg);
-  color:var(--ink);
-  border:1px solid var(--ink);
-  z-index:100;
-  text-decoration:underline;
-  font-family:var(--mono);
-  font-size:11px;
-  letter-spacing:.16em;
-  text-transform:uppercase
-}
-
-/* ---------- hero ---------- */
-.hero{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);grid-template-rows:minmax(0,1.05fr) minmax(0,.7fr);min-height:100vh;border-bottom:1px solid var(--hair)}
-.stage{grid-row:1 / span 2;position:relative;border-right:1px solid var(--hair);overflow:hidden;min-height:60vh}
-.stage canvas{position:absolute;inset:0;width:100%;height:100%;display:block;cursor:grab;touch-action:pan-y}
-.stage canvas:active{cursor:grabbing}
-.stage .cap{position:absolute;left:20px;top:18px;pointer-events:none}
-.stage .cap.b{top:auto;bottom:18px;color:var(--dim)}
-.intro{padding:clamp(24px,4vw,56px);border-bottom:1px solid var(--hair);display:flex;flex-direction:column;justify-content:center;gap:16px}
-.intro h1{font-size:clamp(52px,8.2vw,120px);line-height:.92;letter-spacing:-.045em;font-weight:700}
-.intro .rule{height:1px;background:var(--ink);width:100%}
-.role{font-family:var(--mono);letter-spacing:.2em;font-size:clamp(12px,1.2vw,15px);text-transform:uppercase;min-height:1.6em;transition:opacity .35s}
-.intro p{color:var(--mute);max-width:46ch;font-size:15px}
-.intro p b{color:var(--ink);font-weight:500}
-.links{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
-.btn{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;padding:11px 16px;border:1px solid var(--ink);transition:background .2s,color .2s}
-.btn:hover{background:var(--ink);color:var(--bg)}
-.btn.ghost{border-color:var(--hair);color:var(--mute)}
-.btn.ghost:hover{border-color:var(--ink);background:transparent;color:var(--ink)}
-.sub{display:grid;grid-template-columns:1fr 1fr}
-.burst{border-right:1px solid var(--hair);display:grid;place-items:center;position:relative}
-.burst svg{width:62%;max-width:170px;animation:spin 50s linear infinite}
-.burst .tiny{position:absolute;left:16px;bottom:14px;color:var(--dim)}
-@keyframes spin{to{transform:rotate(360deg)}}
-.facts{padding:clamp(18px,2.4vw,32px);display:flex;flex-direction:column;justify-content:center;gap:18px}
-.fact b{display:block;font-size:clamp(34px,4vw,54px);line-height:1;letter-spacing:-.03em}
-.fact .tiny{font-size:9px;letter-spacing:.16em}
-.fact + .fact{border-top:1px solid var(--hair);padding-top:16px}
-
-/* ---------- sections ---------- */
-section.blk{border-bottom:1px solid var(--hair)}
-.sec-head{display:grid;grid-template-columns:120px 1fr auto;align-items:end;padding:28px clamp(20px,3vw,44px);border-bottom:1px solid var(--hair);gap:12px}
-.sec-head h2{font-size:clamp(26px,3.4vw,44px);letter-spacing:-.03em;line-height:1}
-.sec-head .n{font-family:var(--mono);font-size:12px;color:var(--mute);letter-spacing:.2em}
-
-.metrics{display:grid;grid-template-columns:repeat(4,1fr)}
-.metrics>div{padding:30px clamp(18px,2.4vw,32px) 28px;border-right:1px solid var(--hair);position:relative;overflow:hidden}
-.metrics>div:last-child{border-right:0}
-.metrics b{display:block;font-size:clamp(28px,3.4vw,52px);letter-spacing:-.04em;line-height:1;margin:34px 0 18px;white-space:nowrap}
-.metrics p{color:var(--mute);font-size:13px;border-top:1px solid var(--hair);padding-top:14px;max-width:30ch}
-.cube{position:absolute;right:22px;top:20px;width:34px;height:34px;transform-style:preserve-3d;animation:cube 14s linear infinite;transform:rotateX(-24deg) rotateY(35deg)}
-.cube i{position:absolute;inset:0;border:1px solid var(--ink);opacity:.8}
-.cube i:nth-child(1){transform:translateZ(17px)}.cube i:nth-child(2){transform:rotateY(180deg) translateZ(17px)}
-.cube i:nth-child(3){transform:rotateY(90deg) translateZ(17px)}.cube i:nth-child(4){transform:rotateY(-90deg) translateZ(17px)}
-.cube i:nth-child(5){transform:rotateX(90deg) translateZ(17px)}.cube i:nth-child(6){transform:rotateX(-90deg) translateZ(17px)}
-@keyframes cube{to{transform:rotateX(-24deg) rotateY(395deg)}}
-
-.row{display:grid;grid-template-columns:200px 1fr;border-bottom:1px solid var(--hair)}
-.row:last-child{border-bottom:0}
-.row .when{padding:28px clamp(20px,3vw,44px);border-right:1px solid var(--hair);color:var(--mute);font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase}
-.row .what{padding:28px clamp(20px,3vw,44px)}
-.row h3{font-size:22px;letter-spacing:-.02em;line-height:1.2}
-.row h3 span{color:var(--mute);font-weight:400}
-.row .stk{font-family:var(--mono);font-size:11px;color:var(--mute);margin:8px 0 14px;letter-spacing:.04em}
-.row ul{list-style:none;display:grid;gap:8px;max-width:78ch}
-.row li{color:#c9c9c9;font-size:14.5px;padding-left:20px;position:relative}
-.row li::before{content:"";position:absolute;left:0;top:.72em;width:10px;height:1px;background:var(--ink)}
-
-/* projects */
-.work{display:grid;grid-template-columns:repeat(2,1fr);perspective:1400px}
-.card{padding:clamp(22px,2.6vw,36px);border-right:1px solid var(--hair);border-bottom:1px solid var(--hair);background:var(--bg);position:relative;transform-style:preserve-3d;transition:transform .25s ease-out,background .25s;will-change:transform}
-.card:nth-child(2n){border-right:0}
-.card:nth-last-child(-n+2){border-bottom:0}
-.card:hover{background:var(--panel)}
-.card:active{background:var(--panel);transform:none}
-.card .fig{display:flex;justify-content:space-between;gap:10px;margin-bottom:34px;transform:translateZ(18px)}
-.card h3{font-size:clamp(22px,2.4vw,30px);letter-spacing:-.03em;line-height:1.1;transform:translateZ(34px)}
-.card .stk{font-family:var(--mono);font-size:11px;color:var(--mute);margin:10px 0 18px;transform:translateZ(14px)}
-.card ul{list-style:none;display:grid;gap:8px;transform:translateZ(8px)}
-.card li{font-size:14px;color:#c9c9c9;padding-left:18px;position:relative}
-.card li::before{content:"";position:absolute;left:0;top:.72em;width:9px;height:1px;background:var(--ink)}
-.card .go{display:inline-block;margin-top:22px;font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);border-bottom:1px solid var(--accent);transform:translateZ(24px)}
-.more{display:flex;flex-wrap:wrap;gap:12px 28px;padding:20px clamp(20px,3vw,44px);border-top:1px solid var(--hair);align-items:center}
-.more a{font-family:var(--mono);font-size:12px;color:var(--accent);border-bottom:1px solid transparent}
-.more a:hover{border-color:var(--accent)}
-
-/* stack, CSS 3D */
-.stackwrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}
-.scene{position:relative;min-height:640px;perspective:1500px;border-right:1px solid var(--hair);overflow:hidden}
-.layers{position:absolute;left:50%;top:66%;width:min(380px,66%);height:96px;margin-left:calc(min(380px,66%) / -2);margin-top:-48px;transform-style:preserve-3d;transform:rotateX(58deg) rotateZ(-24deg);transition:transform .8s cubic-bezier(.2,.7,.2,1)}
-.scene:hover .layers{transform:rotateX(54deg) rotateZ(-30deg)}
-.layer{position:absolute;inset:0;border:1px solid #bdbdbd;background:rgba(14,14,14,.92);padding:12px 14px;display:flex;flex-direction:column;justify-content:flex-end;transform:translateZ(calc(var(--i) * 74px));transition:transform .8s cubic-bezier(.2,.7,.2,1);font-family:var(--mono)}
-.scene:hover .layer{transform:translateZ(calc(var(--i) * 100px))}
-.layer small{display:block;font-size:9px;letter-spacing:.24em;color:var(--mute);margin-bottom:6px}
-.layer span{font-size:11.5px;font-weight:700;line-height:1.5;display:block}
-.layer.top{background:#efefef;border-color:#fff;color:#050505}
-.layer.top small{color:#555}
-.scene .tiny{position:absolute;left:20px;bottom:18px;color:var(--dim)}
-.groups{padding:clamp(22px,3vw,44px);display:grid;gap:0;align-content:start}
-.groups div{display:grid;grid-template-columns:140px 1fr;gap:16px;padding:15px 0;border-bottom:1px solid var(--hair)}
-.groups div:last-child{border-bottom:0}
-.groups dt{font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:var(--mute);text-transform:uppercase;padding-top:3px}
-.groups dd{font-size:14px;color:#d6d6d6}
-
-/* record */
-.record{display:grid;grid-template-columns:1fr 1fr}
-.record>div{padding:clamp(22px,3vw,40px);border-right:1px solid var(--hair)}
-.record>div:last-child{border-right:0}
-.record h3{font-family:var(--mono);font-size:11px;letter-spacing:.22em;color:var(--mute);text-transform:uppercase;margin-bottom:18px;font-weight:400}
-.record li{list-style:none;padding:12px 0;border-bottom:1px solid var(--hair);font-size:14.5px;color:#d6d6d6;display:grid;grid-template-columns:54px 1fr;gap:10px}
-.record li b{font-family:var(--mono);font-size:12px;color:var(--ink);font-weight:700}
-.record li:last-child{border-bottom:0}
-.record li small{display:block;color:var(--mute);font-size:12.5px;margin-top:2px}
-
-/* contact */
-.contact{padding:clamp(34px,6vw,90px) clamp(20px,3vw,44px);display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:end}
-.contact h2{font-size:clamp(40px,7vw,104px);letter-spacing:-.045em;line-height:.95}
-.contact ul{list-style:none;display:grid;gap:0}
-.contact li a{display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px solid var(--hair);font-family:var(--mono);font-size:13px;transition:padding .2s,color .2s}
-.contact li a:hover{padding-left:10px;color:var(--accent)}
-.contact li a span{color:var(--mute)}
-footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:18px clamp(20px,3vw,44px)}
-
-/* reveal */
-.rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
-.rv.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}
-  .burst svg,.cube{animation:none}.layer,.layers,.card{transition:none}
-}
-
-/* ---------- responsive ---------- */
-@media (max-width:960px){
-  :root{--rail:0px}
-  .rail{display:none}
-  .hero{grid-template-columns:1fr;grid-template-rows:auto}
-  .stage{grid-row:auto;height:62vh;border-right:0;border-bottom:1px solid var(--hair)}
-  .sub{min-height:220px}
-  .metrics{grid-template-columns:1fr 1fr}
-  .metrics>div:nth-child(2){border-right:0}.metrics>div:nth-child(-n+2){border-bottom:1px solid var(--hair)}
-  .row{grid-template-columns:1fr}.row .when{border-right:0;border-bottom:1px solid var(--hair);padding:16px clamp(20px,3vw,44px)}
-  .work{grid-template-columns:1fr}.card{border-right:0!important;border-bottom:1px solid var(--hair)!important}.card:last-child{border-bottom:0!important}
-  .stackwrap{grid-template-columns:1fr}.scene{border-right:0;border-bottom:1px solid var(--hair);min-height:560px}
-  .record{grid-template-columns:1fr}.record>div{border-right:0;border-bottom:1px solid var(--hair)}.record>div:last-child{border-bottom:0}
-  .contact{grid-template-columns:1fr}
-  .sec-head{grid-template-columns:60px 1fr}.sec-head .tiny.r{display:none}
-}
-@media (max-width:520px){.groups div{grid-template-columns:1fr;gap:4px}}
-</style>
-</head>
-<body>
-
-<nav class="rail" aria-label="Sections">
-  <span class="vt">Vishal S / 2026</span>
-  <ol>
-    <li><a href="#top" class="on" data-s="top">00</a></li>
-    <li><a href="#numbers" data-s="numbers">01</a></li>
-    <li><a href="#experience" data-s="experience">02</a></li>
-    <li><a href="#work" data-s="work">03</a></li>
-    <li><a href="#stack" data-s="stack">04</a></li>
-    <li><a href="#record" data-s="record">05</a></li>
-    <li><a href="#contact" data-s="contact">06</a></li>
-  </ol>
-  <span class="vt">Bengaluru, IN</span>
-</nav>
-
-<main>
-  <a class="skip-link" href="#top">Skip to content</a>
-  <!-- ================= HERO ================= -->
-  <header class="hero" id="top">
-    <div class="stage" id="stage">
-      <canvas id="torus" tabindex="0" aria-label="Interactive 3D wireframe torus. Use arrow keys to rotate, or drag with mouse/touch."></canvas>
-      <span class="tiny cap">FIG.00 / drag to rotate</span>
-      <span class="tiny cap b" id="engine">three.js / wireframe torus</span>
-    </div>
-
-    <div class="intro">
-      <span class="tiny">Hello, I am</span>
-      <h1>Vishal&nbsp;S</h1>
-      <div class="rule"></div>
-      <div class="role" id="role" aria-live="off" aria-atomic="true">Backend Engineer</div>
-      <p>Computer Science (Data Science) undergraduate at BIT, Bengaluru. I build backend services in <b>Java / Spring Boot</b> and <b>Python / FastAPI</b>, cover them with automated tests, and ship them to <b>AWS</b> through CI/CD.</p>
-      <div class="links">
-        <a class="btn" href="https://github.com/v-9469" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn ghost" id="lnk-li" href="https://www.linkedin.com/in/s-vishal-reddy" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="btn ghost" href="mailto:svishalreddy2005@gmail.com">Email</a>
-      </div>
-    </div>
-
-    <div class="sub">
-      <div class="burst"><svg id="burst" viewBox="-100 -100 200 200" aria-hidden="true"></svg><span class="tiny">sys / 2026</span></div>
-      <div class="facts">
-        <div class="fact"><b>30K</b><span class="tiny">live users, RVS app</span></div>
-        <div class="fact"><b>9.07</b><span class="tiny">CGPA, B.E. CSE (DS)</span></div>
-      </div>
-    </div>
-  </header>
-
-  <!-- ================= NUMBERS ================= -->
-  <section class="blk" id="numbers">
-    <div class="metrics">
-      <div class="rv"><span class="tiny">01 / minutes</span><i class="cube"><i></i><i></i><i></i><i></i><i></i><i></i></i><b>30 → 2</b><p>Daily stakeholder report, automated end to end on AWS Lambda.</p></div>
-      <div class="rv"><span class="tiny">02 / users</span><i class="cube"><i></i><i></i><i></i><i></i><i></i><i></i></i><b>700K+</b><p>Scale the RVS backend is designed for. Live with 30K today.</p></div>
-      <div class="rv"><span class="tiny">03 / fetch time</span><i class="cube"><i></i><i></i><i></i><i></i><i></i><i></i></i><b>3m → 60s</b><p>VTU result scraper: Selenium, OpenCV and a multithreaded fetch engine.</p></div>
-      <div class="rv"><span class="tiny">04 / podium</span><i class="cube"><i></i><i></i><i></i><i></i><i></i><i></i></i><b>3 × top‑3</b><p>Two 1st places and one 3rd in college project exhibitions.</p></div>
-    </div>
-  </section>
-
-  <!-- ================= EXPERIENCE ================= -->
-  <section class="blk" id="experience">
-    <div class="sec-head"><span class="n">02</span><h2>Experience</h2><span class="tiny r">3 roles</span></div>
-
-    <article class="row rv">
-      <div class="when">Jul 2026 — now<br>Bengaluru</div>
-      <div class="what">
-        <h3>Software Development Intern <span>/ UNext Learning</span></h3>
-        <div class="stk">Python · FastAPI · PostgreSQL · React · AWS (EC2, RDS, ECR, Lambda) · Docker · GitHub Actions · pytest</div>
-        <ul>
-          <li>Built an end-to-end AWS Lambda automation (Python, ReportLab) that generates daily stakeholder-ready reports, cutting the process from 30 minutes to 2.</li>
-          <li>Built and deployed an internal workflow tool (FastAPI, PostgreSQL, React) on AWS: an EC2 t3.medium instance with a managed RDS database.</li>
-          <li>Containerized services with Docker, published images to Amazon ECR, and set up a GitHub Actions CI/CD pipeline for build, test and deployment.</li>
-          <li>Wrote pytest suites for API endpoints and business logic that run in the pipeline and catch regressions before release.</li>
-        </ul>
-      </div>
-    </article>
-
-    <article class="row rv">
-      <div class="when">Jun 2026 — Jul 2026<br>Bengaluru</div>
-      <div class="what">
-        <h3>Web Developer Intern <span>/ Rugaweb Technologies LLP</span></h3>
-        <div class="stk">WordPress · React · HTML · CSS</div>
-        <ul>
-          <li>Resolved UI bugs and optimized layouts across client WordPress sites to improve performance.</li>
-          <li>Developed interactive React and HTML/CSS prototypes to speed up client approval cycles.</li>
-          <li>Delivered iterative updates from client feedback with zero deployment downtime.</li>
-        </ul>
-      </div>
-    </article>
-
-    <article class="row rv">
-      <div class="when">Jun 2025 — Mar 2026<br>Remote</div>
-      <div class="what">
-        <h3>Freelance Backend Developer <span>/ RVS Membership App</span></h3>
-        <div class="stk">FastAPI · PostgreSQL · Redis · Docker · MinIO</div>
-        <ul>
-          <li>Led a 4-member team building the backend of a trust management system designed for 700K+ users; live with 30K.</li>
-          <li>Built RESTful APIs with FastAPI, containerized services with Docker, and secured file storage via MinIO.</li>
-          <li>Moved OTP storage from PostgreSQL to Redis with auto-expiring TTL keys, cutting primary DB load and speeding up lookups.</li>
-          <li>Migrated legacy Excel records into PostgreSQL with an optimized, error-free schema.</li>
-        </ul>
-      </div>
-    </article>
-  </section>
-
-  <!-- ================= WORK ================= -->
-  <section class="blk" id="work">
-    <div class="sec-head"><span class="n">03</span><h2>Selected work</h2><span class="tiny r">hover the cards</span></div>
-    <div class="work">
-      <article class="card rv" data-tilt>
-        <div class="fig tiny"><span>FIG.01</span><span>Jul 2026 — now</span></div>
-        <h3>AssetIQ</h3>
-        <div class="stk">Java · Spring Boot · MongoDB · JUnit · Jacoco · Gradle · Docker</div>
-        <ul>
-          <li>Multi-tenant asset management platform on Spring Boot and MongoDB.</li>
-          <li>Centralized exception handling for consistent, structured API error responses.</li>
-          <li>JUnit suites with Jacoco coverage reporting, automated through Gradle.</li>
-          <li>Containerized with Docker for consistent deployment.</li>
-        </ul>
-      </article>
-
-      <article class="card rv" data-tilt>
-        <div class="fig tiny"><span>FIG.02</span><span>Jun 2025 — Mar 2026</span></div>
-        <h3>RVS Membership App</h3>
-        <div class="stk">FastAPI · PostgreSQL · Redis · Docker · MinIO</div>
-        <ul>
-          <li>Trust-management backend designed for 700K+ users, live with 30K, built with a team of four.</li>
-          <li>Redis TTL keys for OTPs took load off the primary database.</li>
-          <li>Excel-to-PostgreSQL migration with an optimized schema.</li>
-        </ul>
-      </article>
-
-      <article class="card rv" data-tilt>
-        <div class="fig tiny"><span>FIG.03</span><span>Jul 2026 — now</span></div>
-        <h3>Cloud report automation</h3>
-        <div class="stk">AWS Lambda · Python · ReportLab · EC2 · RDS · ECR · GitHub Actions</div>
-        <ul>
-          <li>Daily stakeholder reports generated by Lambda: 30 minutes down to 2.</li>
-          <li>FastAPI + PostgreSQL + React workflow tool on EC2 with managed RDS.</li>
-          <li>Docker images in ECR, CI/CD with pytest gates in GitHub Actions.</li>
-        </ul>
-      </article>
-
-      <article class="card rv" data-tilt>
-        <div class="fig tiny"><span>FIG.04</span><span>Aug — Dec 2024</span></div>
-        <h3>VTU Result Scraper</h3>
-        <div class="stk">Python · Flask · Selenium · OpenCV · Tesseract · SQLite · Chart.js</div>
-        <ul>
-          <li>Fetch time cut from 3 minutes to under 60 seconds with Selenium.</li>
-          <li>Multithreaded engine parallelizes extraction requests.</li>
-          <li>OpenCV + Tesseract CAPTCHA pipeline with auto-retry; results stored in SQLite and shown on Chart.js dashboards.</li>
-        </ul>
-        <a class="go" href="https://github.com/v-9469/vtu-results" target="_blank" rel="noopener">view repo →</a>
-      </article>
-    </div>
-    <div class="more">
-      <span class="tiny">Also on GitHub</span>
-      <a href="https://github.com/v-9469/Chess" target="_blank" rel="noopener">Chess — online chess game in Python's pygame ↗</a>
-      <a href="https://github.com/v-9469?tab=repositories" target="_blank" rel="noopener">all 14 repositories ↗</a>
-    </div>
-  </section>
-
-  <!-- ================= STACK ================= -->
-  <section class="blk" id="stack">
-    <div class="sec-head"><span class="n">04</span><h2>The stack</h2><span class="tiny r">hover to explode</span></div>
-    <div class="stackwrap">
-      <div class="scene" aria-hidden="true">
-        <div class="layers">
-          <div class="layer" style="--i:0"><small>01 LANGUAGES</small><span>Java / Python / C / JavaScript</span></div>
-          <div class="layer" style="--i:1"><small>02 DATA &amp; LIBRARIES</small><span>NumPy / Pandas / OpenCV / Chart.js</span></div>
-          <div class="layer" style="--i:2"><small>03 DATABASES</small><span>PostgreSQL / MongoDB / Redis / SQLite</span></div>
-          <div class="layer" style="--i:3"><small>04 BACKEND</small><span>Spring Boot / FastAPI / Flask / Node.js</span></div>
-          <div class="layer" style="--i:4"><small>05 FRONTEND</small><span>React / HTML / CSS</span></div>
-          <div class="layer" style="--i:5"><small>06 TESTING</small><span>pytest / JUnit / Jacoco / Selenium</span></div>
-          <div class="layer top" style="--i:6"><small>07 CLOUD &amp; DEVOPS</small><span>AWS / Docker / GitHub Actions / Gradle</span></div>
-        </div>
-        <span class="tiny">css 3d / foundations below, delivery on top</span>
-      </div>
-      <dl class="groups">
-        <div><dt>Languages</dt><dd>Java, Python, C, JavaScript</dd></div>
-        <div><dt>Backend</dt><dd>Spring Boot, FastAPI, Flask, Node.js, REST APIs</dd></div>
-        <div><dt>Frontend</dt><dd>React, HTML, CSS</dd></div>
-        <div><dt>Databases</dt><dd>PostgreSQL, MongoDB, Redis, SQLite</dd></div>
-        <div><dt>Cloud &amp; DevOps</dt><dd>AWS (EC2, RDS, ECR, Lambda), Docker, GitHub Actions (CI/CD), Gradle, Git, Linux, MinIO</dd></div>
-        <div><dt>Testing</dt><dd>pytest, JUnit, Jacoco, Selenium, Test Driven Development</dd></div>
-        <div><dt>Libraries</dt><dd>NumPy, Pandas, Matplotlib, OpenCV, Tesseract OCR, Chart.js</dd></div>
-        <div><dt>Core</dt><dd>Data Structures &amp; Algorithms, OOP, Agile Development</dd></div>
-      </dl>
-    </div>
-  </section>
-
-  <!-- ================= RECORD ================= -->
-  <section class="blk" id="record">
-    <div class="sec-head"><span class="n">05</span><h2>Record</h2><span class="tiny r">education · awards · community</span></div>
-    <div class="record">
-      <div class="rv">
-        <h3>Education &amp; awards</h3>
-        <ul>
-          <li><b>2027</b><span>B.E. Computer Science and Engineering (Data Science)<small>Bangalore Institute of Technology · CGPA 9.07 · 2023 – 2027</small></span></li>
-          <li><b>1st</b><span>IoT Project Exhibition (CSE-DS)<small>Dynamic Traffic Control</small></span></li>
-          <li><b>1st</b><span>Project Exhibition (CSE-DS)<small>FileTracker</small></span></li>
-          <li><b>3rd</b><span>Project Exhibition (Mathematics Dept)<small>VTU Result Analysis</small></span></li>
-        </ul>
-      </div>
-      <div class="rv">
-        <h3>Positions of responsibility</h3>
-        <ul>
-          <li><b>25–26</b><span>Tech Core Member, NodeDotAI, BIT<small>Ran a DSA session for juniors; delivered a hands-on NumPy &amp; Pandas workshop.</small></span></li>
-          <li><b>2024</b><span>On-ground Technical Personnel, AmBITion Tech Fest<small>Managed routers, switches and LAN across 10 classrooms for 600+ participants.</small></span></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= CONTACT ================= -->
-  <section class="blk" id="contact">
-    <div class="contact">
-      <h2 class="rv">Let’s build<br>something solid.</h2>
-      <ul class="rv">
-        <li><a href="mailto:svishalreddy2005@gmail.com">Email <span>svishalreddy2005@gmail.com</span></a></li>
-        <li><a href="https://github.com/v-9469" target="_blank" rel="noopener">GitHub <span>github.com/v-9469</span></a></li>
-        <li><a id="lnk-li2" href="https://www.linkedin.com/in/s-vishal-reddy" target="_blank" rel="noopener">LinkedIn <span>/in/s-vishal-reddy</span></a></li>
-        <li><a href="#top">Back to top <span>↑</span></a></li>
-      </ul>
-    </div>
-  </section>
-
-  <footer class="tiny"><span>© <span id="yr">2026</span> Vishal S</span><span>Bengaluru, Karnataka</span><span>Monochrome / grid / no tracking</span></footer>
-</main>
-
-<script type="module">
-const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-const $ = (s, r = document) => r.querySelector(s);
-const $$ = (s, r = document) => [...r.querySelectorAll(s)];
-$('#yr').textContent = new Date().getFullYear();
-
-/* ---------- reveal + rail ---------- */
-const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12 });
-$$('.rv').forEach(el => io.observe(el));
-const links = Object.fromEntries($$('.rail a').map(a => [a.dataset.s, a]));
-const so = new IntersectionObserver(es => es.forEach(e => {
-  if (e.isIntersecting) { Object.values(links).forEach(a => a.classList.remove('on')); links[e.target.id]?.classList.add('on'); }
-}), { rootMargin: '-45% 0px -50% 0px' });
-['top', 'numbers', 'experience', 'work', 'stack', 'record', 'contact'].forEach(id => { const el = document.getElementById(id); el && so.observe(el); });
-
-/* ---------- rotating role ---------- */
-const roles = ['Backend Engineer', 'Cloud / AWS', 'Test-Driven Builder', 'Spring Boot + FastAPI'];
-let ri = 0; const roleEl = $('#role'); let roleTimer = null;
-if (!reduce) {
-  const tick = () => { roleEl.style.opacity = 0; setTimeout(() => { ri = (ri + 1) % roles.length; roleEl.textContent = roles[ri]; roleEl.style.opacity = 1; }, 350); };
-  const start = () => { if (!roleTimer) roleTimer = setInterval(tick, 2800); };
-  const stop = () => { clearInterval(roleTimer); roleTimer = null; };
-  start();
-  document.addEventListener('visibilitychange', () => { document.hidden ? stop() : start(); });
-}
-
-/* ---------- burst (svg) ---------- */
-(() => {
-  let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
-  const n = 84, svg = $('#burst'); let out = '';
-  for (let i = 0; i < n; i++) {
-    const a = 2 * Math.PI * i / n, r0 = 6, r1 = r0 + (92 - r0) * (.35 + .65 * rnd());
-    out += `<line x1="${(r0 * Math.cos(a)).toFixed(1)}" y1="${(r0 * Math.sin(a)).toFixed(1)}" x2="${(r1 * Math.cos(a)).toFixed(1)}" y2="${(r1 * Math.sin(a)).toFixed(1)}" stroke="#f4f4f4" stroke-width=".8" stroke-opacity="${(.4 + .5 * rnd()).toFixed(2)}"/>`;
-  }
-  svg.innerHTML = out;
-})();
-
-/* ---------- card tilt (css 3d) ---------- */
-if (!reduce && matchMedia('(hover:hover)').matches) {
-  $$('[data-tilt]').forEach(c => {
-    c.addEventListener('pointermove', e => {
-      const r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
-      c.style.transform = `rotateY(${x * 7}deg) rotateX(${-y * 7}deg) translateZ(10px)`;
-    });
-    c.addEventListener('pointerleave', () => { c.style.transform = ''; });
-  });
-}
-
-/* ---------- hero torus ---------- */
-const canvas = $('#torus'), stage = $('#stage'), engineLabel = $('#engine');
-const R = 1, r = .4, RINGS = 28, PTS = 120, MERI = 36;
-let spinOffset = 0, dragging = false, lastX = 0, lastY = 0, vel = 0, mx = 0, my = 0, visible = true;
-let dragPos = { x: 0, y: 0, z: 0 };
-new IntersectionObserver(([e]) => visible = e.isIntersecting).observe(stage);
-canvas.addEventListener('pointerdown', e => { dragging = true; lastX = e.clientX; lastY = e.clientY; canvas.setPointerCapture(e.pointerId); });
-canvas.addEventListener('pointermove', e => {
-  const b = canvas.getBoundingClientRect(); mx = (e.clientX - b.left) / b.width - .5; my = (e.clientY - b.top) / b.height - .5;
-  if (dragging) {
-    dragPos.x += (e.clientX - lastX) * 0.015;
-    dragPos.y -= (e.clientY - lastY) * 0.015;
-    lastX = e.clientX; lastY = e.clientY;
-  }
-});
-['pointerup', 'pointercancel'].forEach(t => canvas.addEventListener(t, () => dragging = false));
-canvas.addEventListener('keydown', e => {
-  const step = 0.05;
-  if (e.key === 'ArrowLeft')  spinOffset -= step;
-  if (e.key === 'ArrowRight') spinOffset += step;
-  if (e.key === 'ArrowUp')    ty -= 0.05;
-  if (e.key === 'ArrowDown')  ty += 0.05;
-});
-async function boot3D() {
-  let THREE, renderer;
-  try {
-    THREE = await import('three');
-    renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
-  } catch (err) { return fallback2D(); }
-
-  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(34, 1, .1, 50); camera.position.set(0, 0, 6.2);
-  const group = new THREE.Group(); group.rotation.order = 'XYZ'; scene.add(group);
-
-  // parallels: the concentric rings of the torus
-  for (let k = 0; k < RINGS; k++) {
-    const th = 2 * Math.PI * k / RINGS, rad = R + r * Math.cos(th), z = r * Math.sin(th), p = new Float32Array(PTS * 3);
-    for (let j = 0; j < PTS; j++) { const ph = 2 * Math.PI * j / PTS; p.set([rad * Math.cos(ph), rad * Math.sin(ph), z], j * 3); }
-    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.BufferAttribute(p, 3));
-    group.add(new THREE.LineLoop(g, new THREE.LineBasicMaterial({ color: 0xffffff, transparent: true, opacity: .28 + .62 * (.5 + .5 * Math.cos(th)) })));
-  }
-  // meridians: fine structure
-  for (let m = 0; m < MERI; m++) {
-    const ph = 2 * Math.PI * m / MERI, p = new Float32Array(48 * 3);
-    for (let j = 0; j < 48; j++) { const th = 2 * Math.PI * j / 48, rad = R + r * Math.cos(th); p.set([rad * Math.cos(ph), rad * Math.sin(ph), r * Math.sin(th)], j * 3); }
-    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.BufferAttribute(p, 3));
-    group.add(new THREE.LineLoop(g, new THREE.LineBasicMaterial({ color: 0xffffff, transparent: true, opacity: .13 })));
-  }
-  // single orbit ring around the torus with travelling cube
-  const orbitMat = new THREE.LineDashedMaterial({ color: 0xaaaaaa, transparent: true, opacity: .8, dashSize: .06, gapSize: .10 });
-
-  const orbit = new THREE.Group(); scene.add(orbit);
-  const op = new Float32Array(160 * 3); for (let j = 0; j < 160; j++) { const a = 2 * Math.PI * j / 160; op.set([1.85 * Math.cos(a), 1.85 * Math.sin(a), 0], j * 3); }
-  const og = new THREE.BufferGeometry(); og.setAttribute('position', new THREE.BufferAttribute(op, 3));
-  orbit.add(new THREE.LineLoop(og, orbitMat));
-  orbit.children[0].computeLineDistances();
-  orbit.rotation.set(-0.5, 0, 0);
-
-  const cube = new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(.16, .16, .16)), new THREE.LineBasicMaterial({ color: 0xffffff }));
-  orbit.add(cube);
-
-  function resize() {
-    const w = stage.clientWidth, h = stage.clientHeight; renderer.setSize(w, h, false);
-    camera.aspect = w / h; camera.fov = w / h < 1 ? 46 : 34; camera.updateProjectionMatrix();
-  }
-  new ResizeObserver(resize).observe(stage); resize();
-
-  let t = 0, last = performance.now(), tx = 0, ty = 0;
-  const tilt = 1.02;
-  function frame(now) {
-    requestAnimationFrame(frame); if (!visible) { last = now; return; }
-    const dt = Math.min((now - last) / 1000, .05); last = now;
-    if (!reduce) t += dt * .22;
-    if (!dragging) { vel *= .94; spinOffset += vel; }
-    tx += (my * .35 - tx) * .05; ty += (mx * .45 - ty) * .05;
-    // random 3D drift (non-repeating via irrational frequency ratios)
-    const driftTime = performance.now() / 2000;
-    const drift = new THREE.Vector3(
-      Math.sin(driftTime) * 0.35,
-      Math.cos(driftTime * 0.7) * 0.35,
-      Math.sin(driftTime * 1.3) * 0.25
-    );
-    group.position.set(dragPos.x + drift.x, dragPos.y + drift.y, drift.z);
-    group.rotation.x = tilt + tx; group.rotation.y = t + spinOffset + ty;
-    const a = performance.now() / 1800; cube.position.set(1.85 * Math.cos(a), 1.85 * Math.sin(a), 0); cube.rotation.set(a, a * .7, 0);
-    renderer.render(scene, camera);
-  }
-  requestAnimationFrame(frame);
-  engineLabel.textContent = 'three.js ' + (THREE.REVISION ? 'r' + THREE.REVISION : '') + ' / wireframe torus';
-}
-
-/* 2D fallback: same maths, projected by hand (no WebGL or CDN blocked) */
-function fallback2D() {
-  engineLabel.textContent = '2d canvas / wireframe torus';
-  const ctx = canvas.getContext('2d'); let t = 0;
-  function size() { const d = Math.min(devicePixelRatio, 2); canvas.width = stage.clientWidth * d; canvas.height = stage.clientHeight * d; ctx.setTransform(d, 0, 0, d, 0, 0); }
-  new ResizeObserver(size).observe(stage); size();
-  const tilt = 1.0;
-  function draw() {
-    requestAnimationFrame(draw); if (!visible) return;
-    const w = stage.clientWidth, h = stage.clientHeight, sc = Math.min(w, h) * .27; ctx.clearRect(0, 0, w, h);
-    if (!reduce) t += .004; const a = t + spinOffset; if (!dragging) { vel *= .94; spinOffset += vel; }
-    for (let k = 0; k < RINGS; k++) {
-      const th = 2 * Math.PI * k / RINGS; ctx.beginPath();
-      for (let j = 0; j <= 96; j++) {
-        const ph = 2 * Math.PI * j / 96, rad = R + r * Math.cos(th), x = rad * Math.cos(ph), y = rad * Math.sin(ph), z = r * Math.sin(th);
-        const x2 = x * Math.cos(a) + z * Math.sin(a), z2 = -x * Math.sin(a) + z * Math.cos(a);
-        const y3 = y * Math.cos(tilt) - z2 * Math.sin(tilt), z3 = y * Math.sin(tilt) + z2 * Math.cos(tilt), s = 1 / (1 - z3 / 6);
-        j ? ctx.lineTo(w / 2 + x2 * s * sc, h / 2 + y3 * s * sc) : ctx.moveTo(w / 2 + x2 * s * sc, h / 2 + y3 * s * sc);
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.module.js"
+        }
       }
-      ctx.strokeStyle = `rgba(244,244,244,${.28 + .62 * (.5 + .5 * Math.cos(th))})`; ctx.lineWidth = .8; ctx.stroke();
-    }
-  }
-  draw();
-}
-boot3D();
-</script>
-</body>
+    </script>
+
+    <style>
+      :root {
+        --bg: #050505;
+        --panel: #0a0a0a;
+        --ink: #f4f4f4;
+        --mute: #8a8a8a;
+        --dim: #4a4a4a;
+        --hair: #2b2b2b;
+        --accent: #8fa8bf; /* the one subtle steel-blue accent, links only */
+        --mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas,
+          "DejaVu Sans Mono", monospace;
+        --sans: "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
+        --rail: 56px;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+        background: var(--bg);
+      }
+      body {
+        background: var(--bg);
+        color: var(--ink);
+        font-family: var(--sans);
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      ::selection {
+        background: var(--ink);
+        color: var(--bg);
+      }
+      .mono {
+        font-family: var(--mono);
+      }
+      .tiny {
+        font-family: var(--mono);
+        font-size: 10px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--mute);
+      }
+
+      /* ---------- rails ---------- */
+      .rail {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: var(--rail);
+        border-right: 1px solid var(--hair);
+        background: var(--bg);
+        z-index: 20;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 18px 0;
+      }
+      .rail ol {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+      .rail a {
+        font-family: var(--mono);
+        font-size: 10px;
+        color: var(--dim);
+        transition: color 0.2s;
+      }
+      .rail a:hover,
+      .rail a.on {
+        color: var(--ink);
+      }
+      .rail .vt {
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+        font-family: var(--mono);
+        font-size: 9px;
+        letter-spacing: 0.3em;
+        color: var(--dim);
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+      main {
+        margin-left: var(--rail);
+      }
+
+      /* ---------- hero ---------- */
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+        grid-template-rows: minmax(0, 1.05fr) minmax(0, 0.7fr);
+        min-height: 100vh;
+        border-bottom: 1px solid var(--hair);
+      }
+      .stage {
+        grid-row: 1 / span 2;
+        position: relative;
+        border-right: 1px solid var(--hair);
+        overflow: hidden;
+        min-height: 60vh;
+      }
+      .stage canvas {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+        cursor: grab;
+        touch-action: pan-y;
+      }
+      .stage canvas:active {
+        cursor: grabbing;
+      }
+      .stage .cap {
+        position: absolute;
+        left: 20px;
+        top: 18px;
+        pointer-events: none;
+      }
+      .stage .cap.b {
+        top: auto;
+        bottom: 18px;
+        color: var(--dim);
+      }
+      .intro {
+        padding: clamp(24px, 4vw, 56px);
+        border-bottom: 1px solid var(--hair);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 16px;
+      }
+      .intro h1 {
+        font-size: clamp(52px, 8.2vw, 120px);
+        line-height: 0.92;
+        letter-spacing: -0.045em;
+        font-weight: 700;
+      }
+      .intro .rule {
+        height: 1px;
+        background: var(--ink);
+        width: 100%;
+      }
+      .role {
+        font-family: var(--mono);
+        letter-spacing: 0.2em;
+        font-size: clamp(12px, 1.2vw, 15px);
+        text-transform: uppercase;
+        min-height: 1.6em;
+        transition: opacity 0.35s;
+      }
+      .intro p {
+        color: var(--mute);
+        max-width: 46ch;
+        font-size: 15px;
+      }
+      .intro p b {
+        color: var(--ink);
+        font-weight: 500;
+      }
+      .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 6px;
+      }
+      .btn {
+        font-family: var(--mono);
+        font-size: 11px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        padding: 11px 16px;
+        border: 1px solid var(--ink);
+        transition: background 0.2s, color 0.2s;
+      }
+      .btn:hover {
+        background: var(--ink);
+        color: var(--bg);
+      }
+      .btn.ghost {
+        border-color: var(--hair);
+        color: var(--mute);
+      }
+      .btn.ghost:hover {
+        border-color: var(--ink);
+        background: transparent;
+        color: var(--ink);
+      }
+      .sub {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      .burst {
+        border-right: 1px solid var(--hair);
+        display: grid;
+        place-items: center;
+        position: relative;
+      }
+      .burst svg {
+        width: 62%;
+        max-width: 170px;
+        animation: spin 50s linear infinite;
+      }
+      .burst .tiny {
+        position: absolute;
+        left: 16px;
+        bottom: 14px;
+        color: var(--dim);
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      .facts {
+        padding: clamp(18px, 2.4vw, 32px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 18px;
+      }
+      .fact b {
+        display: block;
+        font-size: clamp(34px, 4vw, 54px);
+        line-height: 1;
+        letter-spacing: -0.03em;
+      }
+      .fact .tiny {
+        font-size: 9px;
+        letter-spacing: 0.16em;
+      }
+      .fact + .fact {
+        border-top: 1px solid var(--hair);
+        padding-top: 16px;
+      }
+
+      /* ---------- sections ---------- */
+      section.blk {
+        border-bottom: 1px solid var(--hair);
+      }
+      .sec-head {
+        display: grid;
+        grid-template-columns: 120px 1fr auto;
+        align-items: end;
+        padding: 28px clamp(20px, 3vw, 44px);
+        border-bottom: 1px solid var(--hair);
+        gap: 12px;
+      }
+      .sec-head h2 {
+        font-size: clamp(26px, 3.4vw, 44px);
+        letter-spacing: -0.03em;
+        line-height: 1;
+      }
+      .sec-head .n {
+        font-family: var(--mono);
+        font-size: 12px;
+        color: var(--mute);
+        letter-spacing: 0.2em;
+      }
+
+      .metrics {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+      }
+      .metrics > div {
+        padding: 30px clamp(18px, 2.4vw, 32px) 28px;
+        border-right: 1px solid var(--hair);
+        position: relative;
+        overflow: hidden;
+      }
+      .metrics > div:last-child {
+        border-right: 0;
+      }
+      .metrics b {
+        display: block;
+        font-size: clamp(28px, 3.4vw, 52px);
+        letter-spacing: -0.04em;
+        line-height: 1;
+        margin: 34px 0 18px;
+        white-space: nowrap;
+      }
+      .metrics p {
+        color: var(--mute);
+        font-size: 13px;
+        border-top: 1px solid var(--hair);
+        padding-top: 14px;
+        max-width: 30ch;
+      }
+      .cube {
+        position: absolute;
+        right: 22px;
+        top: 20px;
+        width: 34px;
+        height: 34px;
+        transform-style: preserve-3d;
+        animation: cube 14s linear infinite;
+        transform: rotateX(-24deg) rotateY(35deg);
+      }
+      .cube i {
+        position: absolute;
+        inset: 0;
+        border: 1px solid var(--ink);
+        opacity: 0.8;
+      }
+      .cube i:nth-child(1) {
+        transform: translateZ(17px);
+      }
+      .cube i:nth-child(2) {
+        transform: rotateY(180deg) translateZ(17px);
+      }
+      .cube i:nth-child(3) {
+        transform: rotateY(90deg) translateZ(17px);
+      }
+      .cube i:nth-child(4) {
+        transform: rotateY(-90deg) translateZ(17px);
+      }
+      .cube i:nth-child(5) {
+        transform: rotateX(90deg) translateZ(17px);
+      }
+      .cube i:nth-child(6) {
+        transform: rotateX(-90deg) translateZ(17px);
+      }
+      @keyframes cube {
+        to {
+          transform: rotateX(-24deg) rotateY(395deg);
+        }
+      }
+
+      .row {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        border-bottom: 1px solid var(--hair);
+      }
+      .row:last-child {
+        border-bottom: 0;
+      }
+      .row .when {
+        padding: 28px clamp(20px, 3vw, 44px);
+        border-right: 1px solid var(--hair);
+        color: var(--mute);
+        font-family: var(--mono);
+        font-size: 11px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+      .row .what {
+        padding: 28px clamp(20px, 3vw, 44px);
+      }
+      .row h3 {
+        font-size: 22px;
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+      }
+      .row h3 span {
+        color: var(--mute);
+        font-weight: 400;
+      }
+      .row .stk {
+        font-family: var(--mono);
+        font-size: 11px;
+        color: var(--mute);
+        margin: 8px 0 14px;
+        letter-spacing: 0.04em;
+      }
+      .row ul {
+        list-style: none;
+        display: grid;
+        gap: 8px;
+        max-width: 78ch;
+      }
+      .row li {
+        color: #c9c9c9;
+        font-size: 14.5px;
+        padding-left: 20px;
+        position: relative;
+      }
+      .row li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.72em;
+        width: 10px;
+        height: 1px;
+        background: var(--ink);
+      }
+
+      /* projects */
+      .work {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        perspective: 1400px;
+      }
+      .card {
+        padding: clamp(22px, 2.6vw, 36px);
+        border-right: 1px solid var(--hair);
+        border-bottom: 1px solid var(--hair);
+        background: var(--bg);
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform 0.25s ease-out, background 0.25s;
+        will-change: transform;
+      }
+      .card:nth-child(2n) {
+        border-right: 0;
+      }
+      .card:nth-last-child(-n + 2) {
+        border-bottom: 0;
+      }
+      .card:hover {
+        background: var(--panel);
+      }
+      .card .fig {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        margin-bottom: 34px;
+        transform: translateZ(18px);
+      }
+      .card h3 {
+        font-size: clamp(22px, 2.4vw, 30px);
+        letter-spacing: -0.03em;
+        line-height: 1.1;
+        transform: translateZ(34px);
+      }
+      .card .stk {
+        font-family: var(--mono);
+        font-size: 11px;
+        color: var(--mute);
+        margin: 10px 0 18px;
+        transform: translateZ(14px);
+      }
+      .card ul {
+        list-style: none;
+        display: grid;
+        gap: 8px;
+        transform: translateZ(8px);
+      }
+      .card li {
+        font-size: 14px;
+        color: #c9c9c9;
+        padding-left: 18px;
+        position: relative;
+      }
+      .card li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.72em;
+        width: 9px;
+        height: 1px;
+        background: var(--ink);
+      }
+      .card .go {
+        display: inline-block;
+        margin-top: 22px;
+        font-family: var(--mono);
+        font-size: 11px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--accent);
+        border-bottom: 1px solid var(--accent);
+        transform: translateZ(24px);
+      }
+      .more {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px 28px;
+        padding: 20px clamp(20px, 3vw, 44px);
+        border-top: 1px solid var(--hair);
+        align-items: center;
+      }
+      .more a {
+        font-family: var(--mono);
+        font-size: 12px;
+        color: var(--accent);
+        border-bottom: 1px solid transparent;
+      }
+      .more a:hover {
+        border-color: var(--accent);
+      }
+
+      /* stack, CSS 3D */
+      .stackwrap {
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      }
+      .scene {
+        position: relative;
+        min-height: 640px;
+        perspective: 1500px;
+        border-right: 1px solid var(--hair);
+        overflow: hidden;
+      }
+      .layers {
+        position: absolute;
+        left: 50%;
+        top: 66%;
+        width: min(380px, 66%);
+        height: 96px;
+        margin-left: calc(min(380px, 66%) / -2);
+        margin-top: -48px;
+        transform-style: preserve-3d;
+        transform: rotateX(58deg) rotateZ(-24deg);
+        transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+      }
+      .scene:hover .layers {
+        transform: rotateX(54deg) rotateZ(-30deg);
+      }
+      .layer {
+        position: absolute;
+        inset: 0;
+        border: 1px solid #bdbdbd;
+        background: rgba(14, 14, 14, 0.92);
+        padding: 12px 14px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        transform: translateZ(calc(var(--i) * 74px));
+        transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+        font-family: var(--mono);
+      }
+      .scene:hover .layer {
+        transform: translateZ(calc(var(--i) * 100px));
+      }
+      .layer small {
+        display: block;
+        font-size: 9px;
+        letter-spacing: 0.24em;
+        color: var(--mute);
+        margin-bottom: 6px;
+      }
+      .layer span {
+        font-size: 11.5px;
+        font-weight: 700;
+        line-height: 1.5;
+        display: block;
+      }
+      .layer.top {
+        background: #efefef;
+        border-color: #fff;
+        color: #050505;
+      }
+      .layer.top small {
+        color: #555;
+      }
+      .scene .tiny {
+        position: absolute;
+        left: 20px;
+        bottom: 18px;
+        color: var(--dim);
+      }
+      .groups {
+        padding: clamp(22px, 3vw, 44px);
+        display: grid;
+        gap: 0;
+        align-content: start;
+      }
+      .groups div {
+        display: grid;
+        grid-template-columns: 140px 1fr;
+        gap: 16px;
+        padding: 15px 0;
+        border-bottom: 1px solid var(--hair);
+      }
+      .groups div:last-child {
+        border-bottom: 0;
+      }
+      .groups dt {
+        font-family: var(--mono);
+        font-size: 10px;
+        letter-spacing: 0.2em;
+        color: var(--mute);
+        text-transform: uppercase;
+        padding-top: 3px;
+      }
+      .groups dd {
+        font-size: 14px;
+        color: #d6d6d6;
+      }
+
+      /* record */
+      .record {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      .record > div {
+        padding: clamp(22px, 3vw, 40px);
+        border-right: 1px solid var(--hair);
+      }
+      .record > div:last-child {
+        border-right: 0;
+      }
+      .record h3 {
+        font-family: var(--mono);
+        font-size: 11px;
+        letter-spacing: 0.22em;
+        color: var(--mute);
+        text-transform: uppercase;
+        margin-bottom: 18px;
+        font-weight: 400;
+      }
+      .record li {
+        list-style: none;
+        padding: 12px 0;
+        border-bottom: 1px solid var(--hair);
+        font-size: 14.5px;
+        color: #d6d6d6;
+        display: grid;
+        grid-template-columns: 54px 1fr;
+        gap: 10px;
+      }
+      .record li b {
+        font-family: var(--mono);
+        font-size: 12px;
+        color: var(--ink);
+        font-weight: 700;
+      }
+      .record li:last-child {
+        border-bottom: 0;
+      }
+      .record li small {
+        display: block;
+        color: var(--mute);
+        font-size: 12.5px;
+        margin-top: 2px;
+      }
+
+      /* contact */
+      .contact {
+        padding: clamp(34px, 6vw, 90px) clamp(20px, 3vw, 44px);
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 40px;
+        align-items: end;
+      }
+      .contact h2 {
+        font-size: clamp(40px, 7vw, 104px);
+        letter-spacing: -0.045em;
+        line-height: 0.95;
+      }
+      .contact ul {
+        list-style: none;
+        display: grid;
+        gap: 0;
+      }
+      .contact li a {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 16px 0;
+        border-bottom: 1px solid var(--hair);
+        font-family: var(--mono);
+        font-size: 13px;
+        transition: padding 0.2s, color 0.2s;
+      }
+      .contact li a:hover {
+        padding-left: 10px;
+        color: var(--accent);
+      }
+      .contact li a span {
+        color: var(--mute);
+      }
+      footer {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+        padding: 18px clamp(20px, 3vw, 44px);
+      }
+
+      /* reveal */
+      .rv {
+        opacity: 0;
+        transform: translateY(18px);
+        transition: opacity 0.7s ease, transform 0.7s ease;
+      }
+      .rv.in {
+        opacity: 1;
+        transform: none;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        .rv {
+          opacity: 1;
+          transform: none;
+          transition: none;
+        }
+        .burst svg,
+        .cube {
+          animation: none;
+        }
+        .layer,
+        .layers,
+        .card {
+          transition: none;
+        }
+      }
+
+      /* ---------- responsive ---------- */
+      @media (max-width: 960px) {
+        :root {
+          --rail: 0px;
+        }
+        .rail {
+          display: none;
+        }
+        .hero {
+          grid-template-columns: 1fr;
+          grid-template-rows: auto;
+        }
+        .stage {
+          grid-row: auto;
+          height: 62vh;
+          border-right: 0;
+          border-bottom: 1px solid var(--hair);
+        }
+        .sub {
+          min-height: 220px;
+        }
+        .metrics {
+          grid-template-columns: 1fr 1fr;
+        }
+        .metrics > div:nth-child(2) {
+          border-right: 0;
+        }
+        .metrics > div:nth-child(-n + 2) {
+          border-bottom: 1px solid var(--hair);
+        }
+        .row {
+          grid-template-columns: 1fr;
+        }
+        .row .when {
+          border-right: 0;
+          border-bottom: 1px solid var(--hair);
+          padding: 16px clamp(20px, 3vw, 44px);
+        }
+        .work {
+          grid-template-columns: 1fr;
+        }
+        .card {
+          border-right: 0 !important;
+          border-bottom: 1px solid var(--hair) !important;
+        }
+        .card:last-child {
+          border-bottom: 0 !important;
+        }
+        .stackwrap {
+          grid-template-columns: 1fr;
+        }
+        .scene {
+          border-right: 0;
+          border-bottom: 1px solid var(--hair);
+          min-height: 560px;
+        }
+        .record {
+          grid-template-columns: 1fr;
+        }
+        .record > div {
+          border-right: 0;
+          border-bottom: 1px solid var(--hair);
+        }
+        .record > div:last-child {
+          border-bottom: 0;
+        }
+        .contact {
+          grid-template-columns: 1fr;
+        }
+        .sec-head {
+          grid-template-columns: 60px 1fr;
+        }
+        .sec-head .tiny.r {
+          display: none;
+        }
+      }
+      @media (max-width: 520px) {
+        .groups div {
+          grid-template-columns: 1fr;
+          gap: 4px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="rail" aria-label="Sections">
+      <span class="vt">Vishal S / 2026</span>
+      <ol>
+        <li><a href="#top" class="on" data-s="top">00</a></li>
+        <li><a href="#numbers" data-s="numbers">01</a></li>
+        <li><a href="#experience" data-s="experience">02</a></li>
+        <li><a href="#work" data-s="work">03</a></li>
+        <li><a href="#stack" data-s="stack">04</a></li>
+        <li><a href="#record" data-s="record">05</a></li>
+        <li><a href="#contact" data-s="contact">06</a></li>
+      </ol>
+      <span class="vt">Bengaluru, IN</span>
+    </nav>
+
+    <main>
+      <!-- ================= HERO ================= -->
+      <header class="hero" id="top">
+        <div class="stage" id="stage">
+          <canvas
+            id="torus"
+            aria-label="Interactive 3D wireframe torus. Drag to rotate."
+          ></canvas>
+          <span class="tiny cap">FIG.00 / drag to rotate</span>
+          <span class="tiny cap b" id="engine">three.js / wireframe torus</span>
+        </div>
+
+        <div class="intro">
+          <span class="tiny">Hello, I am</span>
+          <h1>Vishal&nbsp;S</h1>
+          <div class="rule"></div>
+          <div class="role" id="role">Backend Engineer</div>
+          <p>
+            Computer Science (Data Science) undergraduate at BIT, Bengaluru. I
+            build backend services in <b>Java / Spring Boot</b> and
+            <b>Python / FastAPI</b>, cover them with automated tests, and ship
+            them to <b>AWS</b> through CI/CD.
+          </p>
+          <div class="links">
+            <a
+              class="btn"
+              href="https://github.com/v-9469"
+              target="_blank"
+              rel="noopener"
+              >GitHub</a
+            >
+            <a
+              class="btn ghost"
+              id="lnk-li"
+              href="https://www.linkedin.com/in/s-vishal-reddy"
+              target="_blank"
+              rel="noopener"
+              >LinkedIn</a
+            >
+            <a class="btn ghost" href="mailto:svishalreddy2005@gmail.com"
+              >Email</a
+            >
+          </div>
+        </div>
+
+        <div class="sub">
+          <div class="burst">
+            <svg id="burst" viewBox="-100 -100 200 200" aria-hidden="true"></svg
+            ><span class="tiny">sys / 2026</span>
+          </div>
+          <div class="facts">
+            <div class="fact">
+              <b>30K</b><span class="tiny">live users, RVS app</span>
+            </div>
+            <div class="fact">
+              <b>9.07</b><span class="tiny">CGPA, B.E. CSE (DS)</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- ================= NUMBERS ================= -->
+      <section class="blk" id="numbers">
+        <div class="metrics">
+          <div class="rv">
+            <span class="tiny">01 / minutes</span
+            ><i class="cube"><i></i><i></i><i></i><i></i><i></i><i></i></i
+            ><b>30 → 2</b>
+            <p>Daily stakeholder report, automated end to end on AWS Lambda.</p>
+          </div>
+          <div class="rv">
+            <span class="tiny">02 / users</span
+            ><i class="cube"><i></i><i></i><i></i><i></i><i></i><i></i></i
+            ><b>700K+</b>
+            <p>Scale the RVS backend is designed for. Live with 30K today.</p>
+          </div>
+          <div class="rv">
+            <span class="tiny">03 / fetch time</span
+            ><i class="cube"><i></i><i></i><i></i><i></i><i></i><i></i></i
+            ><b>3m → 60s</b>
+            <p>
+              VTU result scraper: Selenium, OpenCV and a multithreaded fetch
+              engine.
+            </p>
+          </div>
+          <div class="rv">
+            <span class="tiny">04 / podium</span
+            ><i class="cube"><i></i><i></i><i></i><i></i><i></i><i></i></i
+            ><b>3 × top‑3</b>
+            <p>Two 1st places and one 3rd in college project exhibitions.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= EXPERIENCE ================= -->
+      <section class="blk" id="experience">
+        <div class="sec-head">
+          <span class="n">02</span>
+          <h2>Experience</h2>
+          <span class="tiny r">3 roles</span>
+        </div>
+
+        <article class="row rv">
+          <div class="when">Jul 2026 — now<br />Bengaluru</div>
+          <div class="what">
+            <h3>Software Development Intern <span>/ UNext Learning</span></h3>
+            <div class="stk">
+              Python · FastAPI · PostgreSQL · React · AWS (EC2, RDS, ECR,
+              Lambda) · Docker · GitHub Actions · pytest
+            </div>
+            <ul>
+              <li>
+                Built an end-to-end AWS Lambda automation (Python, ReportLab)
+                that generates daily stakeholder-ready reports, cutting the
+                process from 30 minutes to 2.
+              </li>
+              <li>
+                Built and deployed an internal workflow tool (FastAPI,
+                PostgreSQL, React) on AWS: an EC2 t3.medium instance with a
+                managed RDS database.
+              </li>
+              <li>
+                Containerized services with Docker, published images to Amazon
+                ECR, and set up a GitHub Actions CI/CD pipeline for build, test
+                and deployment.
+              </li>
+              <li>
+                Wrote pytest suites for API endpoints and business logic that
+                run in the pipeline and catch regressions before release.
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="row rv">
+          <div class="when">Jun 2026 — Jul 2026<br />Bengaluru</div>
+          <div class="what">
+            <h3>
+              Web Developer Intern <span>/ Rugaweb Technologies LLP</span>
+            </h3>
+            <div class="stk">WordPress · React · HTML · CSS</div>
+            <ul>
+              <li>
+                Resolved UI bugs and optimized layouts across client WordPress
+                sites to improve performance.
+              </li>
+              <li>
+                Developed interactive React and HTML/CSS prototypes to speed up
+                client approval cycles.
+              </li>
+              <li>
+                Delivered iterative updates from client feedback with zero
+                deployment downtime.
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="row rv">
+          <div class="when">Jun 2025 — Mar 2026<br />Remote</div>
+          <div class="what">
+            <h3>
+              Freelance Backend Developer <span>/ RVS Membership App</span>
+            </h3>
+            <div class="stk">FastAPI · PostgreSQL · Redis · Docker · MinIO</div>
+            <ul>
+              <li>
+                Led a 4-member team building the backend of a trust management
+                system designed for 700K+ users; live with 30K.
+              </li>
+              <li>
+                Built RESTful APIs with FastAPI, containerized services with
+                Docker, and secured file storage via MinIO.
+              </li>
+              <li>
+                Moved OTP storage from PostgreSQL to Redis with auto-expiring
+                TTL keys, cutting primary DB load and speeding up lookups.
+              </li>
+              <li>
+                Migrated legacy Excel records into PostgreSQL with an optimized,
+                error-free schema.
+              </li>
+            </ul>
+          </div>
+        </article>
+      </section>
+
+      <!-- ================= WORK ================= -->
+      <section class="blk" id="work">
+        <div class="sec-head">
+          <span class="n">03</span>
+          <h2>Selected work</h2>
+          <span class="tiny r">hover the cards</span>
+        </div>
+        <div class="work">
+          <article class="card rv" data-tilt>
+            <div class="fig tiny">
+              <span>FIG.01</span><span>Jul 2026 — now</span>
+            </div>
+            <h3>AssetIQ</h3>
+            <div class="stk">
+              Java · Spring Boot · MongoDB · JUnit · Jacoco · Gradle · Docker
+            </div>
+            <ul>
+              <li>
+                Multi-tenant asset management platform on Spring Boot and
+                MongoDB.
+              </li>
+              <li>
+                Centralized exception handling for consistent, structured API
+                error responses.
+              </li>
+              <li>
+                JUnit suites with Jacoco coverage reporting, automated through
+                Gradle.
+              </li>
+              <li>Containerized with Docker for consistent deployment.</li>
+            </ul>
+          </article>
+
+          <article class="card rv" data-tilt>
+            <div class="fig tiny">
+              <span>FIG.02</span><span>Jun 2025 — Mar 2026</span>
+            </div>
+            <h3>RVS Membership App</h3>
+            <div class="stk">FastAPI · PostgreSQL · Redis · Docker · MinIO</div>
+            <ul>
+              <li>
+                Trust-management backend designed for 700K+ users, live with
+                30K, built with a team of four.
+              </li>
+              <li>
+                Redis TTL keys for OTPs took load off the primary database.
+              </li>
+              <li>Excel-to-PostgreSQL migration with an optimized schema.</li>
+            </ul>
+          </article>
+
+          <article class="card rv" data-tilt>
+            <div class="fig tiny">
+              <span>FIG.03</span><span>Jul 2026 — now</span>
+            </div>
+            <h3>Cloud report automation</h3>
+            <div class="stk">
+              AWS Lambda · Python · ReportLab · EC2 · RDS · ECR · GitHub Actions
+            </div>
+            <ul>
+              <li>
+                Daily stakeholder reports generated by Lambda: 30 minutes down
+                to 2.
+              </li>
+              <li>
+                FastAPI + PostgreSQL + React workflow tool on EC2 with managed
+                RDS.
+              </li>
+              <li>
+                Docker images in ECR, CI/CD with pytest gates in GitHub Actions.
+              </li>
+            </ul>
+          </article>
+
+          <article class="card rv" data-tilt>
+            <div class="fig tiny">
+              <span>FIG.04</span><span>Aug — Dec 2024</span>
+            </div>
+            <h3>VTU Result Scraper</h3>
+            <div class="stk">
+              Python · Flask · Selenium · OpenCV · Tesseract · SQLite · Chart.js
+            </div>
+            <ul>
+              <li>
+                Fetch time cut from 3 minutes to under 60 seconds with Selenium.
+              </li>
+              <li>Multithreaded engine parallelizes extraction requests.</li>
+              <li>
+                OpenCV + Tesseract CAPTCHA pipeline with auto-retry; results
+                stored in SQLite and shown on Chart.js dashboards.
+              </li>
+            </ul>
+            <a
+              class="go"
+              href="https://github.com/v-9469/vtu-results"
+              target="_blank"
+              rel="noopener"
+              >view repo →</a
+            >
+          </article>
+        </div>
+        <div class="more">
+          <span class="tiny">Also on GitHub</span>
+          <a
+            href="https://github.com/v-9469/Chess"
+            target="_blank"
+            rel="noopener"
+            >Chess — online chess game in Python's pygame ↗</a
+          >
+          <a
+            href="https://github.com/v-9469?tab=repositories"
+            target="_blank"
+            rel="noopener"
+            >all 14 repositories ↗</a
+          >
+        </div>
+      </section>
+
+      <!-- ================= STACK ================= -->
+      <section class="blk" id="stack">
+        <div class="sec-head">
+          <span class="n">04</span>
+          <h2>The stack</h2>
+          <span class="tiny r">hover to explode</span>
+        </div>
+        <div class="stackwrap">
+          <div class="scene" aria-hidden="true">
+            <div class="layers">
+              <div class="layer" style="--i: 0;">
+                <small>01 LANGUAGES</small
+                ><span>Java / Python / C / JavaScript</span>
+              </div>
+              <div class="layer" style="--i: 1;">
+                <small>02 DATA &amp; LIBRARIES</small
+                ><span>NumPy / Pandas / OpenCV / Chart.js</span>
+              </div>
+              <div class="layer" style="--i: 2;">
+                <small>03 DATABASES</small
+                ><span>PostgreSQL / MongoDB / Redis / SQLite</span>
+              </div>
+              <div class="layer" style="--i: 3;">
+                <small>04 BACKEND</small
+                ><span>Spring Boot / FastAPI / Flask / Node.js</span>
+              </div>
+              <div class="layer" style="--i: 4;">
+                <small>05 FRONTEND</small><span>React / HTML / CSS</span>
+              </div>
+              <div class="layer" style="--i: 5;">
+                <small>06 TESTING</small
+                ><span>pytest / JUnit / Jacoco / Selenium</span>
+              </div>
+              <div class="layer top" style="--i: 6;">
+                <small>07 CLOUD &amp; DEVOPS</small
+                ><span>AWS / Docker / GitHub Actions / Gradle</span>
+              </div>
+            </div>
+            <span class="tiny"
+              >css 3d / foundations below, delivery on top</span
+            >
+          </div>
+          <dl class="groups">
+            <div>
+              <dt>Languages</dt>
+              <dd>Java, Python, C, JavaScript</dd>
+            </div>
+            <div>
+              <dt>Backend</dt>
+              <dd>Spring Boot, FastAPI, Flask, Node.js, REST APIs</dd>
+            </div>
+            <div>
+              <dt>Frontend</dt>
+              <dd>React, HTML, CSS</dd>
+            </div>
+            <div>
+              <dt>Databases</dt>
+              <dd>PostgreSQL, MongoDB, Redis, SQLite</dd>
+            </div>
+            <div>
+              <dt>Cloud &amp; DevOps</dt>
+              <dd>
+                AWS (EC2, RDS, ECR, Lambda), Docker, GitHub Actions (CI/CD),
+                Gradle, Git, Linux, MinIO
+              </dd>
+            </div>
+            <div>
+              <dt>Testing</dt>
+              <dd>pytest, JUnit, Jacoco, Selenium, Test Driven Development</dd>
+            </div>
+            <div>
+              <dt>Libraries</dt>
+              <dd>
+                NumPy, Pandas, Matplotlib, OpenCV, Tesseract OCR, Chart.js
+              </dd>
+            </div>
+            <div>
+              <dt>Core</dt>
+              <dd>Data Structures &amp; Algorithms, OOP, Agile Development</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- ================= RECORD ================= -->
+      <section class="blk" id="record">
+        <div class="sec-head">
+          <span class="n">05</span>
+          <h2>Record</h2>
+          <span class="tiny r">education · awards · community</span>
+        </div>
+        <div class="record">
+          <div class="rv">
+            <h3>Education &amp; awards</h3>
+            <ul>
+              <li>
+                <b>2027</b
+                ><span
+                  >B.E. Computer Science and Engineering (Data Science)<small
+                    >Bangalore Institute of Technology · CGPA 9.07 · 2023 –
+                    2027</small
+                  ></span
+                >
+              </li>
+              <li>
+                <b>1st</b
+                ><span
+                  >IoT Project Exhibition (CSE-DS)<small
+                    >Dynamic Traffic Control</small
+                  ></span
+                >
+              </li>
+              <li>
+                <b>1st</b
+                ><span
+                  >Project Exhibition (CSE-DS)<small>FileTracker</small></span
+                >
+              </li>
+              <li>
+                <b>3rd</b
+                ><span
+                  >Project Exhibition (Mathematics Dept)<small
+                    >VTU Result Analysis</small
+                  ></span
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="rv">
+            <h3>Positions of responsibility</h3>
+            <ul>
+              <li>
+                <b>25–26</b
+                ><span
+                  >Tech Core Member, NodeDotAI, BIT<small
+                    >Ran a DSA session for juniors; delivered a hands-on NumPy
+                    &amp; Pandas workshop.</small
+                  ></span
+                >
+              </li>
+              <li>
+                <b>2024</b
+                ><span
+                  >On-ground Technical Personnel, AmBITion Tech Fest<small
+                    >Managed routers, switches and LAN across 10 classrooms for
+                    600+ participants.</small
+                  ></span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= CONTACT ================= -->
+      <section class="blk" id="contact">
+        <div class="contact">
+          <h2 class="rv">Let’s build<br />something solid.</h2>
+          <ul class="rv">
+            <li>
+              <a href="mailto:svishalreddy2005@gmail.com"
+                >Email <span>svishalreddy2005@gmail.com</span></a
+              >
+            </li>
+            <li>
+              <a href="https://github.com/v-9469" target="_blank" rel="noopener"
+                >GitHub <span>github.com/v-9469</span></a
+              >
+            </li>
+            <li>
+              <a
+                id="lnk-li2"
+                href="https://www.linkedin.com/in/s-vishal-reddy"
+                target="_blank"
+                rel="noopener"
+                >LinkedIn <span>/in/s-vishal-reddy</span></a
+              >
+            </li>
+            <li>
+              <a href="#top">Back to top <span>↑</span></a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <footer class="tiny">
+        <span>© <span id="yr">2026</span> Vishal S</span
+        ><span>Bengaluru, Karnataka</span
+        ><span>Monochrome / grid / no tracking</span>
+      </footer>
+    </main>
+
+    <script type="module">
+      const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const $ = (s, r = document) => r.querySelector(s);
+      const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+      $("#yr").textContent = new Date().getFullYear();
+
+      /* ---------- reveal + rail ---------- */
+      const io = new IntersectionObserver(
+        (es) =>
+          es.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("in");
+              io.unobserve(e.target);
+            }
+          }),
+        { threshold: 0.12 },
+      );
+      $$(".rv").forEach((el) => io.observe(el));
+      const links = Object.fromEntries(
+        $$(".rail a").map((a) => [a.dataset.s, a]),
+      );
+      const so = new IntersectionObserver(
+        (es) =>
+          es.forEach((e) => {
+            if (e.isIntersecting) {
+              Object.values(links).forEach((a) => a.classList.remove("on"));
+              links[e.target.id]?.classList.add("on");
+            }
+          }),
+        { rootMargin: "-45% 0px -50% 0px" },
+      );
+      [
+        "top",
+        "numbers",
+        "experience",
+        "work",
+        "stack",
+        "record",
+        "contact",
+      ].forEach((id) => {
+        const el = document.getElementById(id);
+        el && so.observe(el);
+      });
+
+      /* ---------- rotating role ---------- */
+      const roles = [
+        "Backend Engineer",
+        "Cloud / AWS",
+        "Test-Driven Builder",
+        "Spring Boot + FastAPI",
+      ];
+      let ri = 0;
+      const roleEl = $("#role");
+      if (!reduce)
+        setInterval(() => {
+          roleEl.style.opacity = 0;
+          setTimeout(() => {
+            ri = (ri + 1) % roles.length;
+            roleEl.textContent = roles[ri];
+            roleEl.style.opacity = 1;
+          }, 350);
+        }, 2800);
+
+      /* ---------- burst (svg) ---------- */
+      (() => {
+        let seed = 7;
+        const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+        const n = 84,
+          svg = $("#burst");
+        let out = "";
+        for (let i = 0; i < n; i++) {
+          const a = (2 * Math.PI * i) / n,
+            r0 = 6,
+            r1 = r0 + (92 - r0) * (0.35 + 0.65 * rnd());
+          out += `<line x1="${(r0 * Math.cos(a)).toFixed(1)}" y1="${(
+            r0 * Math.sin(a)
+          ).toFixed(1)}" x2="${(r1 * Math.cos(a)).toFixed(1)}" y2="${(
+            r1 * Math.sin(a)
+          ).toFixed(1)}" stroke="#f4f4f4" stroke-width=".8" stroke-opacity="${(
+            0.4 +
+            0.5 * rnd()
+          ).toFixed(2)}"/>`;
+        }
+        svg.innerHTML = out;
+      })();
+
+      /* ---------- card tilt (css 3d) ---------- */
+      if (!reduce && matchMedia("(hover:hover)").matches) {
+        $$("[data-tilt]").forEach((c) => {
+          c.addEventListener("pointermove", (e) => {
+            const r = c.getBoundingClientRect(),
+              x = (e.clientX - r.left) / r.width - 0.5,
+              y = (e.clientY - r.top) / r.height - 0.5;
+            c.style.transform = `rotateY(${x * 7}deg) rotateX(${
+              -y * 7
+            }deg) translateZ(10px)`;
+          });
+          c.addEventListener("pointerleave", () => {
+            c.style.transform = "";
+          });
+        });
+      }
+
+      /* ---------- hero torus ---------- */
+      const canvas = $("#torus"),
+        stage = $("#stage"),
+        engineLabel = $("#engine");
+      const R = 1,
+        r = 0.4,
+        RINGS = 28,
+        PTS = 120,
+        MERI = 36;
+      let spinOffset = 0,
+        dragging = false,
+        lastX = 0,
+        vel = 0,
+        mx = 0,
+        my = 0,
+        visible = true;
+      new IntersectionObserver(([e]) => (visible = e.isIntersecting)).observe(
+        stage,
+      );
+      canvas.addEventListener("pointerdown", (e) => {
+        dragging = true;
+        lastX = e.clientX;
+        canvas.setPointerCapture(e.pointerId);
+      });
+      canvas.addEventListener("pointermove", (e) => {
+        const b = canvas.getBoundingClientRect();
+        mx = (e.clientX - b.left) / b.width - 0.5;
+        my = (e.clientY - b.top) / b.height - 0.5;
+        if (dragging) {
+          vel = (e.clientX - lastX) * 0.008;
+          spinOffset += vel;
+          lastX = e.clientX;
+        }
+      });
+      ["pointerup", "pointercancel"].forEach((t) =>
+        canvas.addEventListener(t, () => (dragging = false)),
+      );
+
+      async function boot3D() {
+        let THREE, renderer;
+        try {
+          THREE = await import("three");
+          renderer = new THREE.WebGLRenderer({
+            canvas,
+            antialias: true,
+            alpha: true,
+          });
+        } catch (err) {
+          return fallback2D();
+        }
+
+        renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(34, 1, 0.1, 50);
+        camera.position.set(0, 0, 6.2);
+        const group = new THREE.Group();
+        group.rotation.order = "XYZ";
+        scene.add(group);
+
+        // parallels: the concentric rings of the torus
+        for (let k = 0; k < RINGS; k++) {
+          const th = (2 * Math.PI * k) / RINGS,
+            rad = R + r * Math.cos(th),
+            z = r * Math.sin(th),
+            p = new Float32Array(PTS * 3);
+          for (let j = 0; j < PTS; j++) {
+            const ph = (2 * Math.PI * j) / PTS;
+            p.set([rad * Math.cos(ph), rad * Math.sin(ph), z], j * 3);
+          }
+          const g = new THREE.BufferGeometry();
+          g.setAttribute("position", new THREE.BufferAttribute(p, 3));
+          group.add(
+            new THREE.LineLoop(
+              g,
+              new THREE.LineBasicMaterial({
+                color: 0xffffff,
+                transparent: true,
+                opacity: 0.28 + 0.62 * (0.5 + 0.5 * Math.cos(th)),
+              }),
+            ),
+          );
+        }
+        // meridians: fine structure
+        for (let m = 0; m < MERI; m++) {
+          const ph = (2 * Math.PI * m) / MERI,
+            p = new Float32Array(48 * 3);
+          for (let j = 0; j < 48; j++) {
+            const th = (2 * Math.PI * j) / 48,
+              rad = R + r * Math.cos(th);
+            p.set(
+              [rad * Math.cos(ph), rad * Math.sin(ph), r * Math.sin(th)],
+              j * 3,
+            );
+          }
+          const g = new THREE.BufferGeometry();
+          g.setAttribute("position", new THREE.BufferAttribute(p, 3));
+          group.add(
+            new THREE.LineLoop(
+              g,
+              new THREE.LineBasicMaterial({
+                color: 0xffffff,
+                transparent: true,
+                opacity: 0.13,
+              }),
+            ),
+          );
+        }
+        // orbit ring + a small cube travelling on it
+        const orbit = new THREE.Group();
+        scene.add(orbit);
+        const op = new Float32Array(160 * 3);
+        for (let j = 0; j < 160; j++) {
+          const a = (2 * Math.PI * j) / 160;
+          op.set([1.85 * Math.cos(a), 1.85 * Math.sin(a), 0], j * 3);
+        }
+        const og = new THREE.BufferGeometry();
+        og.setAttribute("position", new THREE.BufferAttribute(op, 3));
+        orbit.add(
+          new THREE.LineLoop(
+            og,
+            new THREE.LineDashedMaterial({
+              color: 0x777777,
+              dashSize: 0.06,
+              gapSize: 0.08,
+            }),
+          ),
+        );
+        orbit.children[0].computeLineDistances();
+        const cube = new THREE.LineSegments(
+          new THREE.EdgesGeometry(new THREE.BoxGeometry(0.16, 0.16, 0.16)),
+          new THREE.LineBasicMaterial({ color: 0xffffff }),
+        );
+        orbit.add(cube);
+        orbit.rotation.set(1.05, 0.2, 0.35);
+
+        function resize() {
+          const w = stage.clientWidth,
+            h = stage.clientHeight;
+          renderer.setSize(w, h, false);
+          camera.aspect = w / h;
+          camera.fov = w / h < 1 ? 46 : 34;
+          camera.updateProjectionMatrix();
+        }
+        new ResizeObserver(resize).observe(stage);
+        resize();
+
+        let t = 0,
+          last = performance.now(),
+          tx = 0,
+          ty = 0;
+        const tilt = 1.02;
+        function frame(now) {
+          requestAnimationFrame(frame);
+          if (!visible) {
+            last = now;
+            return;
+          }
+          const dt = Math.min((now - last) / 1000, 0.05);
+          last = now;
+          if (!reduce) t += dt * 0.22;
+          if (!dragging) {
+            vel *= 0.94;
+            spinOffset += vel;
+          }
+          tx += (my * 0.35 - tx) * 0.05;
+          ty += (mx * 0.45 - ty) * 0.05;
+          group.rotation.x = tilt + tx;
+          group.rotation.y = t + spinOffset + ty;
+          const a = performance.now() / 1800;
+          cube.position.set(1.85 * Math.cos(a), 1.85 * Math.sin(a), 0);
+          cube.rotation.set(a, a * 0.7, 0);
+          renderer.render(scene, camera);
+        }
+        requestAnimationFrame(frame);
+        engineLabel.textContent =
+          "three.js " +
+          (THREE.REVISION ? "r" + THREE.REVISION : "") +
+          " / wireframe torus";
+      }
+
+      /* 2D fallback: same maths, projected by hand (no WebGL or CDN blocked) */
+      function fallback2D() {
+        engineLabel.textContent = "2d canvas / wireframe torus";
+        const ctx = canvas.getContext("2d");
+        let t = 0;
+        function size() {
+          const d = Math.min(devicePixelRatio, 2);
+          canvas.width = stage.clientWidth * d;
+          canvas.height = stage.clientHeight * d;
+          ctx.setTransform(d, 0, 0, d, 0, 0);
+        }
+        new ResizeObserver(size).observe(stage);
+        size();
+        const tilt = 1.0;
+        function draw() {
+          requestAnimationFrame(draw);
+          if (!visible) return;
+          const w = stage.clientWidth,
+            h = stage.clientHeight,
+            sc = Math.min(w, h) * 0.27;
+          ctx.clearRect(0, 0, w, h);
+          if (!reduce) t += 0.004;
+          const a = t + spinOffset;
+          if (!dragging) {
+            vel *= 0.94;
+            spinOffset += vel;
+          }
+          for (let k = 0; k < RINGS; k++) {
+            const th = (2 * Math.PI * k) / RINGS;
+            ctx.beginPath();
+            for (let j = 0; j <= 96; j++) {
+              const ph = (2 * Math.PI * j) / 96,
+                rad = R + r * Math.cos(th),
+                x = rad * Math.cos(ph),
+                y = rad * Math.sin(ph),
+                z = r * Math.sin(th);
+              const x2 = x * Math.cos(a) + z * Math.sin(a),
+                z2 = -x * Math.sin(a) + z * Math.cos(a);
+              const y3 = y * Math.cos(tilt) - z2 * Math.sin(tilt),
+                z3 = y * Math.sin(tilt) + z2 * Math.cos(tilt),
+                s = 1 / (1 - z3 / 6);
+              j
+                ? ctx.lineTo(w / 2 + x2 * s * sc, h / 2 + y3 * s * sc)
+                : ctx.moveTo(w / 2 + x2 * s * sc, h / 2 + y3 * s * sc);
+            }
+            ctx.strokeStyle = `rgba(244,244,244,${
+              0.28 + 0.62 * (0.5 + 0.5 * Math.cos(th))
+            })`;
+            ctx.lineWidth = 0.8;
+            ctx.stroke();
+          }
+        }
+        draw();
+      }
+      boot3D();
+    </script>
+  </body>
 </html>
